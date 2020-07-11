@@ -1,0 +1,32 @@
+@import "header.css";
+@import "footer.css";
+
+html,
+body {
+    font-family: "Avenir Next" !important;
+    background-color: #fffdf6;
+}
+
+.parent {
+  background-color: #fffdf6;
+  margin-bottom: -50px;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 8px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%
+}

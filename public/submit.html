@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html  >
+   <head>
+      <title>The Black Fashion Finder | Submit a label</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="./css/submitForm.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   </head>
+   <body>
+     <div class="parent">
+      <div class="header">
+         <a href="./index.html" class="logo">THE BLACK FASHION FINDER</a>
+         <div class="header-right">
+            <a href="./index.html">Home</a>
+            <a class="active" href="./submit.html">Submit a Fashion Label</a>
+         </div>
+      </div>
+      <div class="form">
+         <h1 style="text-align:center">Submit a Fashion Label</h1>
+         <form class="form-horizontal submit-business-form" name="submitBusinessForm">
+            <fieldset>
+               <!-- Form Name -->
+               <legend align="center">Please enter the information as correctly as possible since this will be used directly for the app listing.</legend>
+               <!-- Text input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="submitter_first_name">Your First Name</label>
+                  <div class="col-md-4">
+                     <input id="submitter_first_name" name="submitter_first_name" type="text" placeholder="" class="form-control input-md" required>
+                  </div>
+               </div>
+               <!-- Text input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="submitter_last_name">Your Last Name</label>
+                  <div class="col-md-4">
+                     <input id="submitter_last_name" name="submitter_last_name" type="text" class="form-control input-md" required>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="submitter_email">Your email:</label>
+                  <div class="col-md-4">
+                     <input type="email" id="submitter_email" name="submitter_email" class="form-control input-md"  required>
+                  </div>
+               </div>
+               <hr>
+               <!-- Text input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="label_name">Label Name</label>
+                  <div class="col-md-4">
+                     <input id="label_name" name="label_name" type="text" placeholder="" class="form-control input-md" required>
+                  </div>
+               </div>
+               <!-- Text input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="label_owner_name">Label Owner Name</label>
+                  <div class="col-md-4">
+                     <input id="label_owner_name" name="label_owner_name" type="text" placeholder="" class="form-control input-md" required>
+                  </div>
+               </div>
+               <!-- Textarea -->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="label_desc">What is this label about? What is the mission statement or motivation behind the label?</label>
+                  <div class="col-md-4">
+                     <textarea class="form-control" id="label_desc" name="label_desc" required></textarea>
+                  </div>
+               </div>
+               <!-- Multiple Radios -->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="black_owned">Is this business fully or partially Black-owned?</label>
+                  <div class="col-md-4">
+                     <div class="radio">
+                        <label for="black_owned-0">
+                        <input type="radio" name="black_owned" id="black_owned-0" value="True" checked="checked">
+                        Yes
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label for="black_owned-1">
+                        <input type="radio" name="black_owned" id="black_owned-1" value="False">
+                        No
+                        </label>
+                     </div>
+                  </div>
+               </div>
+               <!-- File Button -->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="label_picture">Please upload a 1:1 aspect ratio picture that will be used to represent the brand on the Black Fashion Finder app. Accepted file types are .png and .jpeg</label>
+                  <div class="col-md-4">
+                     <input id="label_picture" name="label_picture" class="input-file" type="file" accept="image/png, image/jpeg"  onchange="document.getElementById('label_picture_preview').src = window.URL.createObjectURL(this.files[0])" required>
+                  </div>
+               </div>
+               <!-- File preview -->
+               <div class="form-group">
+                  <img id="label_picture_preview" height="150"/>
+               </div>
+               <hr>
+               <!-- Multiple Checkboxes -->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="cost_checkboxes">What does this label sell?</label>
+                  <div class="col-md-4">
+                     <div class="checkbox">
+                        <label for="checkboxes-0">
+                        <input type="checkbox" name="cost_checkboxes" id="cost_checkboxes-0" value="Clothing">
+                        Clothing
+                        </label>
+                     </div>
+                     <div class="checkbox">
+                        <label for="checkboxes-1">
+                        <input type="checkbox" name="cost_checkboxes" id="cost_checkboxes-1" value="Accessories">
+                        Accessories
+                        </label>
+                     </div>
+                     <div class="checkbox">
+                        <label for="checkboxes-2">
+                        <input type="checkbox" name="cost_checkboxes" id="cost_checkboxes-2" value="Jewelry">
+                        Jewelry
+                        </label>
+                     </div>
+                     <div class="checkbox">
+                        <label for="checkboxes-3">
+                        <input type="checkbox" name="cost_checkboxes" id="cost_checkboxes-3" value="Shoes">
+                        Shoes
+                        </label>
+                     </div>
+                  </div>
+               </div>
+               <!-- Text input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="lowest_price">What is the lowest priced item sold by the label (in USD)?</label>
+                  <div class="col-md-4">
+                     <input id="lowest_price" name="lowest_price" type="number" placeholder="" class="form-control input-md" required="">
+                  </div>
+               </div>
+               <!-- Text input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="highest_price">What is the highest priced item sold by the label (in USD)?</label>
+                  <div class="col-md-4">
+                     <input id="highest_price" name="highest_price" type="number" placeholder="" class="form-control input-md" required="">
+                  </div>
+               </div>
+               <!-- Multiple Radios -->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="price_range">What is the approximate price range of the label's options?</label>
+                  <div class="col-md-4">
+                     <div class="radio">
+                        <label for="price-range-0">
+                        <input type="radio" name="price_range" id="price_range-0" value="$" checked="checked">
+                        $0 - $75
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label for="price-range-1">
+                        <input type="radio" name="price_range" id="price range-1" value="$$">
+                        $25 - $150
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label for="price-range-2">
+                        <input type="radio" name="price_range" id="price range-2" value="$$$">
+                        $75 - $300
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label for="price-range-3">
+                        <input type="radio" name="price_range" id="price range-3" value="$$$$">
+                        $300+
+                        </label>
+                     </div>
+                  </div>
+               </div>
+
+              <hr>
+
+               <!-- File Button -->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="item_picture">Please upload a 1:1 aspect ratio picture of an item the brand sells. Accepted file types are .png and .jpeg</label>
+                  <div class="col-md-4">
+                     <input id="item_picture" name="item_picture" class="input-file" type="file" accept="image/png, image/jpeg" onchange="document.getElementById('item_picture_preview').src = window.URL.createObjectURL(this.files[0])" required>
+                  </div>
+               </div>
+               <!-- file preview -->
+               <div class="form-group">
+                  <img id="item_picture_preview" height="150"/>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="item_description">What is the name of this item?</label>
+                  <div class="col-md-4">
+                     <input id="item_description" name="item_description" type="text" placeholder="" class="form-control input-md" required="">
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="item_description_price">What is the price of this item (in USD)?</label>
+                  <div class="col-md-4">
+                     <input id="item_description_price" name="item_description_price" type="number" placeholder="" class="form-control input-md" required="">
+                  </div>
+               </div>
+               <hr>
+               <!-- Text input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="ig">What is this label's Instagram URL? Please use the format: https://instagram.com/</label>
+                  <div class="col-md-4">
+                     <input type="url" pattern="https://instagram.com/.*" id="ig" name="ig" placeholder="https://instagram.com/fashionLabelInstagram" class="form-control input-md">
+                  </div>
+               </div>
+               <!-- Text input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="website">What is this label's website? Please use the format: https://</label>
+                  <div class="col-md-4">
+                     <input type="url" id="website" name="website" placeholder="https://fashionLabelWebsite.com" class="form-control input-md">
+                  </div>
+               </div>
+               <!-- <div class="g-recaptcha" data-sitekey="6Lc9GLAZAAAAAPxzrj7aR666vFdo5iUl33JOkomc" data-theme="light" data-size="normal" data-image="image"></div> -->
+               <!-- Button -->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="singlebutton"></label>
+                  <div class="col-md-4">
+                     <button id="singlebutton" name="singlebutton" class="btn btn-primary" type="submit">Submit</button>
+                  </div>
+               </div>
+            </fieldset>
+         </form>
+      </div>
+      <footer id="footer">
+        <a href="https://instagram.com/blackfashionfinder"><i class="fa fa-instagram"></i></a>
+      </footer>
+    </div>
+
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="/__/firebase/7.16.0/firebase-app.js"></script>
+      <script src="/__/firebase/7.16.0/firebase-firestore.js"></script>
+      <script src="/__/firebase/7.16.0/firebase-storage.js"></script>
+      <!-- Initialize Firebase -->
+      <script src="/__/firebase/init.js"></script>
+      <script type="module" src="./js/submitForm.js"></script>
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script>
+         var itemPicturePreview = document.getElementById('item_picture_preview');
+         var labelPicturePreview = document.getElementById('label_picture_preview');
+         var highestItemPrice = document.getElementById('highest_price');
+         var lowestItemPrice = document.getElementById('lowest_price');
+
+         itemPicturePreview.onload = function(){
+           var height = itemPicturePreview.height;
+           var width = itemPicturePreview.width;
+           if(height !== width) {
+             alert('WARNING: This picture is not a square aspect ratio. This may cause the listing to look incorrect.');
+           }
+         }
+
+         labelPicturePreview.onload = function(){
+           var height = labelPicturePreview.height;
+           var width = labelPicturePreview.width;
+           if(height !== width) {
+             alert('WARNING: This picture is not a square aspect ratio. This may cause the listing to look incorrect.');
+           }
+         }
+
+         highestItemPrice.addEventListener("input", function (event) {
+           var lowestItemPrice = document.getElementById("lowest_price");
+           var lowestItemPriceInt = parseInt(lowestItemPrice.value, 10);
+           var highestItemPriceInt = parseInt(highestItemPrice.value, 10);
+           if (highestItemPriceInt <= lowestItemPriceInt) {
+             lowestItemPrice.setCustomValidity("Lowest priced item cannot be the same or higher price than the highest priced item.");
+             highestItemPrice.setCustomValidity("Highest priced item cannot be the same or lower price than the lowest priced item.");
+           } else {
+             lowestItemPrice.setCustomValidity("");
+             highestItemPrice.setCustomValidity("");
+           }
+         });
+         lowestItemPrice.addEventListener("input", function (event) {
+           var highestItemPrice = document.getElementById("highest_price");
+           var highestItemPriceInt = parseInt(highestItemPrice.value, 10);
+           var lowestItemPriceInt = parseInt(lowestItemPrice.value, 10);
+           if (highestItemPriceInt <= lowestItemPriceInt) {
+             lowestItemPrice.setCustomValidity("Lowest priced item cannot be the same or higher price than the highest priced item.");
+             highestItemPrice.setCustomValidity("Highest priced item cannot be the same or lower price than the lowest priced item.");
+           } else {
+             lowestItemPrice.setCustomValidity("");
+             highestItemPrice.setCustomValidity("");
+           }
+         });
+      </script>
+   </body>
+</html>
