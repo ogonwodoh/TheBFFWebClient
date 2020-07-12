@@ -1,0 +1,42 @@
+<html>
+   <head>
+      <title>The Black Fashion Finder | Admin Home</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="../css/main.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   </head>
+   <body>
+      <div class="parent">
+      <div class="header">
+         <a href="./index.html" class="logo">THE BLACK FASHION FINDER</a>
+         <div class="header-right">
+            <a class="active" href="../index.html">Home</a>
+            <a href="../submit.html">Submit a Fashion Label</a>
+            <a href="pending.html">Pending Labels </a>
+            <a href="" onclick=signOut()> Sign Out </a>
+         </div>
+      </div>
+      <div style="margin-top:8px; margin-left:8px; margin-right:8px;">
+         <h1 style="text-align:center"> Welcome to the Black Fashion Finder Admin Console </h1>
+      </div>
+      <script src="/__/firebase/7.16.0/firebase-app.js"></script>
+      <script src="/__/firebase/7.16.0/firebase-auth.js"></script>
+      <!-- Initialize Firebase -->
+      <script src="/__/firebase/init.js"></script>
+      <script>
+         firebase.auth().onAuthStateChanged(user => {
+           if(!user) {
+             window.location = '../login.html'; //If User is not logged in, redirect to login page
+           }
+         });
+
+         let signOut = function() {
+           firebase.auth().signOut()
+             .catch(function(error) {
+               alert('Unable to sign out');
+             });
+           }
+      </script>
+   </body>
+</html>

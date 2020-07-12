@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Black Fashion Finder | Admin Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    <style>
+    	.login-form {
+    		width: 340px;
+        	margin: 50px auto;
+    	}
+        .login-form form {
+        	margin-bottom: 15px;
+            background: #f7f7f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+        .login-form h2 {
+            margin: 0 0 15px;
+        }
+        .form-control, .btn {
+            min-height: 38px;
+            border-radius: 2px;
+        }
+        .btn {
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="login-form">
+        <form class="admin-login-form">
+          <h2 class="text-center">Log in</h2>
+          <div class="form-group">
+              <input type="email" id ="email" class="form-control" placeholder="Username" required="required">
+          </div>
+          <div class="form-group">
+              <input type="password" id="password" class="form-control" placeholder="Password" required="required">
+          </div>
+          <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block">Log in</button>
+          </div>
+      </form>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.16.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.16.0/firebase-auth.js"></script>
+      <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <script type="module" src="./js/login.js"></script>
+  </body>
+</html>

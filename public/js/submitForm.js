@@ -74,8 +74,6 @@ if (form) {
     form.addEventListener('submit', function(evt) {
         evt.preventDefault();
         let isBlackOwnedInput = form.querySelector('input[name="black_owned"]:checked').value;
-        console.log(isBlackOwnedInput);
-        console.log(typeof(isBlackOwnedInput));
         let isBlackOwned = isBlackOwnedInput.toLowerCase() === "true"
         if (isBlackOwned) {
             firebasePush();

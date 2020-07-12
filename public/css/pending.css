@@ -1,0 +1,16 @@
+@import "header.css";
+@import "footer.css";
+@import "main.css";
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 12px;
+}
+
+.tableContainer {
+  overflow: scroll;
+  padding: 16px;
+}
