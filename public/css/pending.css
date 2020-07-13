@@ -10,6 +10,8 @@ th, td {
   padding: 12px;
 }
 
+tr:nth-child(even) {background-color: #C0C0C0;}
+
 .tableContainer {
   overflow: scroll;
   padding: 16px;

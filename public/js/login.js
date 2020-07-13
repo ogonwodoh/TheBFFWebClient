@@ -13,7 +13,7 @@ if (form) {
           .then( function(user){
             auth = user;
             setTimeout(function(){
-              window.location.replace("../admin/adminConsole.html")
+              window.location.replace("../admin/adminHome.html")
               }, 1000)
             })
           .catch(function(error){
