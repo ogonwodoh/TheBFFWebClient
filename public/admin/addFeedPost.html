@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>The Black Fashion Finder | Admin Home</title>
+      <title>The Black Fashion Finder | Publish Feed Post</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="../css/main.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -40,7 +40,53 @@
         </fieldset>
     </form>
 
+    <div class="form">
+       <h1 style="text-align:center">Publish a Feed Post</h1>
+       <form class="form-horizontal feed-publish-form" name="feedPublishForm">
+          <fieldset>
+             <!-- Text input-->
+             <div class="form-group">
+                <label class="col-md-4 control-label" for="label_name">Label Name</label>
+                <div class="col-md-4">
+                   <input id="label_name" name="label_name" type="text" placeholder="" class="form-control input-md" required>
+                </div>
+             </div>
+             <!-- Text input-->
+             <div class="form-group">
+                <label class="col-md-4 control-label" for="label_id">Label ID</label>
+                <div class="col-md-4">
+                   <input id="label_id" name="label_id" type="text" class="form-control input-md" required>
+                </div>
+             </div>
+             <!-- File Button -->
+             <div class="form-group">
+                <div class="col-md-4">
+                   <input id="post_pic" name="post_pic" class="input-file" type="file" accept="image/png, image/jpeg"  onchange="document.getElementById('post_pic_preview').src = window.URL.createObjectURL(this.files[0])" required>
+                </div>
+             </div>
+             <!-- File preview -->
+             <div class="form-group" style="margin-left: 16px">
+                <img id="post_pic_preview" height="150"/>
+             </div>
+             <!-- Button -->
+             <div class="form-group">
+                <label class="col-md-4 control-label" for="singlebutton"></label>
+                <div class="col-md-4">
+                   <button id="singlebutton" name="singlebutton" class="btn btn-primary" type="submit">Post</button>
+                </div>
+             </div>
+          </fieldset>
+       </form>
+     </div>
+
     </div>
+    <script src="/__/firebase/7.16.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.16.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/7.16.0/firebase-storage.js"></script>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="module" src="../js/lookup.js"></script>
+    <script type="module" src="../js/publishFeedPost.js"></script>
   </body>
 </html>
