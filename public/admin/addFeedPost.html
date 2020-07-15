@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>The Black Fashion Finder | Admin Home</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="../css/main.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   </head>
+  <body>
+    <div class="parent">
+      <div class="header">
+         <a href="./index.html" class="logo">THE BLACK FASHION FINDER</a>
+         <div class="header-right">
+            <a href="../index.html">Home</a>
+            <a href="../submit.html">Submit a Fashion Label</a>
+            <a href="adminHome.html"> Admin Home </a>
+            <a href="pending.html">Pending Labels </a>
+            <a class="active" href="addFeedPost.html"> Add Feed Post </a>
+            <a href="" onclick=signOut()> Sign Out </a>
+         </div>
+      </div>
+
+      <form class="lookup-label-form">
+        <h4 style="padding: 16px"> Lookup fashion label by name</h3>
+        <fieldset>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="label_name">Update these label statuses to approved. You can update multiple by adding IDs in comma separated values (no spaces).</label>
+            <div class="col-md-4">
+              <input id="label_name" name="label_name" type="text" placeholder="" class="form-control input-md" required>
+            </div>
+          </div>
+          <div style="padding: 16px" class="lookup-results"></div>
+          <div class="form-group">
+             <label class="col-md-4 control-label" for="singlebutton"></label>
+             <div class="col-md-4">
+                <button id="singlebutton" name="singlebutton" class="btn btn-primary" type="submit">Go</button>
+             </div>
+          </div>
+        </fieldset>
+    </form>
+
+    </div>
+    <script type="module" src="../js/lookup.js"></script>
+  </body>
+</html>
