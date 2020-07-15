@@ -173,7 +173,7 @@
 
                <!-- File Button -->
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="item_picture">Please upload a 1:1 aspect ratio picture of an item the brand sells. Accepted file types are .png and .jpeg</label>
+                  <label class="col-md-4 control-label" for="item_picture">Please a picture of an item the brand sells. Accepted file types are .png and .jpeg</label>
                   <div class="col-md-4">
                      <input id="item_picture" name="item_picture" class="input-file" type="file" accept="image/png, image/jpeg" onchange="document.getElementById('item_picture_preview').src = window.URL.createObjectURL(this.files[0])" required>
                   </div>
@@ -235,18 +235,9 @@
       <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script>
-         var itemPicturePreview = document.getElementById('item_picture_preview');
          var labelPicturePreview = document.getElementById('label_picture_preview');
          var highestItemPrice = document.getElementById('highest_price');
          var lowestItemPrice = document.getElementById('lowest_price');
-
-         itemPicturePreview.onload = function(){
-           var height = itemPicturePreview.height;
-           var width = itemPicturePreview.width;
-           if(height !== width) {
-             alert('WARNING: This picture is not a square aspect ratio. This may cause the listing to look incorrect.');
-           }
-         }
 
          labelPicturePreview.onload = function(){
            var height = labelPicturePreview.height;

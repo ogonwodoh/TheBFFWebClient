@@ -1,3 +1,5 @@
+import config from './secretConsts.js';
+
 const TABLE_ID = "pendingLabelsTable";
 const form = document.querySelector('.update-pending-labels-form');
 
@@ -111,6 +113,11 @@ function handlePendingLabelUpdates(response) {
 }
 
 function addRow(pendingFashionLabel) {
+  if (!firebase.apps.length) {
+      firebase.initializeApp(config);
+    }
+    let storage = firebase.storage();
+
     let table = document.getElementById(TABLE_ID);
 
     let rowCount = table.rows.length;
@@ -131,36 +138,48 @@ function addRow(pendingFashionLabel) {
     let aboutStatementCell = row.insertCell(4);
     aboutStatementCell.innerHTML = pendingFashionLabel.aboutStatement;
 
-    let priceRangeCell = row.insertCell(5);
+    let labelImageCell = row.insertCell(5);
+    storage.ref(pendingFashionLabel.labelImgPath).getDownloadURL().then(function(url) {
+      let cellContents = url ? "<a href=" + url + " target=\"_blank\"> Label Image </a>" : "Not found";
+      labelImageCell.innerHTML = cellContents;
+    });
+
+    let priceRangeCell = row.insertCell(6);
     priceRangeCell.innerHTML = pendingFashionLabel.avgPriceRange;
 
-    let lowestPriceItemCell = row.insertCell(6);
+    let lowestPriceItemCell = row.insertCell(7);
     lowestPriceItemCell.innerHTML = "$" + pendingFashionLabel.lowestPriceItem;
 
-    let highestPriceItemCell = row.insertCell(7);
+    let highestPriceItemCell = row.insertCell(8);
     highestPriceItemCell.innerHTML = "$" + pendingFashionLabel.highestPriceItem;
 
-    let offeringsCell = row.insertCell(8);
+    let offeringsCell = row.insertCell(9);
     offeringsCell.innerHTML = pendingFashionLabel.offerings.map(function (key) {
       return " " + key;
     }).toString();
 
-    let igUrlCell = row.insertCell(9);
-    igUrlCell.innerHTML = "<a href=http://" + pendingFashionLabel.instagramUrl + ">" + pendingFashionLabel.instagramUrl+ "</a>";
+    let igUrlCell = row.insertCell(10);
+    igUrlCell.innerHTML = "<a href=http://" + pendingFashionLabel.instagramUrl + " target=\"_blank\">" + pendingFashionLabel.instagramUrl+ "</a>";
 
-    let websiteUrlCell = row.insertCell(10);
-    websiteUrlCell.innerHTML = "<a href=http://" + pendingFashionLabel.websiteUrl + ">" + pendingFashionLabel.websiteUrl + "</a>";
+    let websiteUrlCell = row.insertCell(11);
+    websiteUrlCell.innerHTML = "<a href=http://" + pendingFashionLabel.websiteUrl + " target=\"_blank\">" + pendingFashionLabel.websiteUrl + "</a>";
 
-    let exampleItemDescCell = row.insertCell(11);
+    let exampleImgPathCell = row.insertCell(12);
+    storage.ref(pendingFashionLabel.exampleImgPath).getDownloadURL().then(function(url) {
+      let cellContents = url ? "<a href=" + url + " target=\"_blank\"> Example Item </a>" : "Not found";
+      exampleImgPathCell.innerHTML = cellContents;
+    });
+
+    let exampleItemDescCell = row.insertCell(13);
     exampleItemDescCell.innerHTML = pendingFashionLabel.exampleImgDesc;
 
-    let exampleImgPriceCell = row.insertCell(12);
+    let exampleImgPriceCell = row.insertCell(14);
     exampleImgPriceCell.innerHTML = "$" + pendingFashionLabel.exampleImagePrice;
 
-    let submittedByCell = row.insertCell(13);
+    let submittedByCell = row.insertCell(15);
     submittedByCell.innerHTML = pendingFashionLabel.submittedBy;
 
-    let submittedByEmail = row.insertCell(14);
+    let submittedByEmail = row.insertCell(16);
     submittedByEmail.innerHTML = "<a href=mailto:" + pendingFashionLabel.submittedByEmail + ">" + pendingFashionLabel.submittedByEmail + "</a>"
 }
 
