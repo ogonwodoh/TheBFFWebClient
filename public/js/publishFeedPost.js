@@ -6,20 +6,6 @@ const form = document.querySelector('.feed-publish-form');
 
 const FEED_POST_FILE = 'posts/';
 
-// async function verifyLabel() {
-//     if (!firebase.apps.length) {
-//       firebase.initializeApp(config);
-//     }
-//     let labelName = form.querySelector('#label_name').value;
-//     let id = form.querySelector('#label_id').value;
-//     let db = firebase.firestore();
-//     console.log(labelName);
-//     console.log(id);
-//     let res = await db.collection('fashionLabel').get();
-//     console.log(res);
-//     return res;
-// }
-
 async function firebasePush() {
     if (!firebase.apps.length) {
         firebase.initializeApp(config);
@@ -54,6 +40,9 @@ async function firebasePush() {
         imgPath: FEED_POST_FILE + feedPicFileName,
     };
     postRef.set(data);
+    postRef.update({
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    });
     return true;
     // endregion
 }

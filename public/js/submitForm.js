@@ -67,6 +67,9 @@ function firebasePush() {
         websiteUrl: website
     };
     pendingCollectionsRef.set(data);
+    pendingCollectionsRef.update({
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    });
     // endregion
 }
 
