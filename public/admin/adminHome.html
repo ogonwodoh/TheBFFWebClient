@@ -17,6 +17,7 @@
             <a class="active" href="adminHome.html"> Admin Home </a>
             <a href="pending.html">Pending Labels </a>
             <a href="addFeedPost.html"> Add Feed Post </a>
+            <a href="fashionLabels.html"> Fashion Labels </a>
             <a href="" onclick=signOut()> Sign Out </a>
          </div>
       </div>
@@ -32,10 +33,27 @@
         <a href="./addFeedPost.html" style="font-size: 20px; color: black"> Add a feed post </a>
       </div>
 
+      <div style="text-align:center; padding-top: 20px;">
+        <a href="./fashionLabels.html" style="font-size: 20px; color: black"> See all fashion labels </a>
+      </div>
+
       <script src="/__/firebase/7.16.0/firebase-app.js"></script>
       <script src="/__/firebase/7.16.0/firebase-auth.js"></script>
       <!-- Initialize Firebase -->
       <script src="/__/firebase/init.js"></script>
-      <script type="module" src="../js/auth.js"></script>
+      <script>
+        firebase.auth().onAuthStateChanged(user => {
+          if(!user) {
+            window.location = '../login.html'; //If User is not logged in, redirect to login page
+          }
+        });
+
+        let signOut = function() {
+          firebase.auth().signOut()
+            .catch(function(error) {
+              alert('Unable to sign out');
+            });
+          }
+      </script>
    </body>
 </html>

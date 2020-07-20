@@ -107,9 +107,10 @@ function handlePendingLabelUpdates(response) {
   if(response.data === null) {
     return;
   }
-  return alert("Rejected : " + response.data.newRejects.toString()
-    + "\nApproved: " + response.data.newApprovals.toString()
-    + "\nPublished: " + response.data.newPublishes.toString());
+  console.log(response.data);
+  return alert("Rejected : " + (response.data.newRejects != null ? response.data.newRejects.toString() : "[]")
+    + "\nApproved: " + (response.data.newApprovals != null ? response.data.newApprovals.toString() : "[]")
+    + "\nPublished: " + (response.data.newPublishes != null ? response.data.newPublishes.toString() : "[]"));
 }
 
 function addRow(pendingFashionLabel) {

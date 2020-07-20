@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+   <head >
+      <title>The Black Fashion Finder | Fashion Labels</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" href="">
+      <link rel="stylesheet" href="../css/fashionLabels.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   </head >
+   <body>
+      <div class="parent" id="parent">
+        <div class="header">
+           <a href="../index.html" class="logo">THE BLACK FASHION FINDER</a>
+           <div class="header-right">
+              <a href="../index.html">Home</a>
+              <a href="../submit.html">Submit a Fashion Label</a>
+              <a href="adminHome.html"> Admin Home </a>
+              <a href="pending.html">Pending Labels </a>
+              <a href="addFeedPost.html"> Add Feed Post </a>
+              <a class="active" href="fashionLabels.html"> Fashion Labels </a>
+              <a href="" onclick=signOut()> Sign Out </a>
+           </div>
+        </div>
+        <div style="margin-top:8px; margin-left:8px; margin-right:8px;">
+           <h2 style="text-align:center"> Current Fashion Labels </h2>
+        </div>
+
+      <div class="tableContainer">
+        <table id="currentLabelsTable">
+          <tr>
+            <th>ID</th>
+            <th>Label Name</th>
+            <th> Label Owner </th>
+            <th> About Statement </th>
+            <th> Label Image </th>
+            <th> Price Range </th>
+            <th> Lowest Price Item </th>
+            <th> Highest Price Item </th>
+            <th> Offerings </th>
+            <th> IG Url </th>
+            <th> Website </th>
+            <th> Example Item Image </th>
+            <th> Example Item Description</th>
+            <th> Example Image Price </th>
+          </tr>
+        </table>
+      </div>
+      <div class="fetchMore" id="fetchMore">
+         <button id="singlebutton" name="singlebutton" class="btn btn-primary" onclick="performFetch(false)">Fetch More</button>
+      </div>
+      <script src="/__/firebase/7.16.0/firebase-app.js"></script>
+      <script src="/__/firebase/7.16.0/firebase-auth.js"></script>
+      <script src="/__/firebase/7.16.0/firebase-storage.js"></script>
+      <!-- Initialize Firebase -->
+      <script src="/__/firebase/init.js"></script>
+      <script type="module" src="../js/fashionLabels.js"></script>
+      <script>
+        firebase.auth().onAuthStateChanged(user => {
+          if(!user) {
+            window.location = '../login.html'; //If User is not logged in, redirect to login page
+          }
+        });
+
+        let signOut = function() {
+          firebase.auth().signOut()
+            .catch(function(error) {
+              alert('Unable to sign out');
+            });
+          }
+      </script>
+   </body>
+</html>

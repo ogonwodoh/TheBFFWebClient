@@ -1,0 +1,6 @@
+@import "pending.css";
+
+.fetchMore {
+  display: flex;
+  justify-content: center;
+}

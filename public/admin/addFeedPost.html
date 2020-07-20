@@ -17,6 +17,7 @@
             <a href="adminHome.html"> Admin Home </a>
             <a href="pending.html">Pending Labels </a>
             <a class="active" href="addFeedPost.html"> Add Feed Post </a>
+            <a href="fashionLabels.html"> Fashion Labels </a>
             <a href="" onclick=signOut()> Sign Out </a>
          </div>
       </div>
@@ -89,6 +90,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="module" src="../js/lookup.js"></script>
     <script type="module" src="../js/publishFeedPost.js"></script>
-    <script type="module" src="../js/auth.js"></script>
+    <script>
+      firebase.auth().onAuthStateChanged(user => {
+        if(!user) {
+          window.location = '../login.html'; //If User is not logged in, redirect to login page
+        }
+      });
+
+      let signOut = function() {
+        firebase.auth().signOut()
+          .catch(function(error) {
+            alert('Unable to sign out');
+          });
+        }
+    </script>
   </body>
 </html>
