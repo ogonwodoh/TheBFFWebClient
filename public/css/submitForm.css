@@ -16,3 +16,7 @@ body {
   margin-right: 8px;
   background-color: #fffdf6
 }
+
+.g-recaptcha {
+  margin: 8px;
+}

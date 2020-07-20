@@ -84,9 +84,9 @@
                </div>
                <!-- File Button -->
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="label_picture">Please upload a 1:1 aspect ratio picture that will be used to represent the brand on the Black Fashion Finder app. Accepted file types are .png and .jpeg</label>
+                  <label class="col-md-4 control-label" for="label_picture">Please upload a 1:1 aspect ratio picture that will be used to represent the brand on the Black Fashion Finder app. Accepted file types are .png,.jpeg, and .gif.</label>
                   <div class="col-md-4">
-                     <input id="label_picture" name="label_picture" class="input-file" type="file" accept="image/png, image/jpeg"  onchange="document.getElementById('label_picture_preview').src = window.URL.createObjectURL(this.files[0])" required>
+                     <input id="label_picture" name="label_picture" class="input-file" type="file" accept="image/png, image/jpeg, image/gif"  onchange="document.getElementById('label_picture_preview').src = window.URL.createObjectURL(this.files[0])" required>
                   </div>
                </div>
                <!-- File preview -->
@@ -173,9 +173,9 @@
 
                <!-- File Button -->
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="item_picture">Please a picture of an item the brand sells. Accepted file types are .png and .jpeg</label>
+                  <label class="col-md-4 control-label" for="item_picture">Please a picture of an item the brand sells. Accepted file types are .png,.jpeg, and .gif.</label>
                   <div class="col-md-4">
-                     <input id="item_picture" name="item_picture" class="input-file" type="file" accept="image/png, image/jpeg" onchange="document.getElementById('item_picture_preview').src = window.URL.createObjectURL(this.files[0])" required>
+                     <input id="item_picture" name="item_picture" class="input-file" type="file" accept="image/png, image/jpeg, image/gif" onchange="document.getElementById('item_picture_preview').src = window.URL.createObjectURL(this.files[0])" required>
                   </div>
                </div>
                <!-- file preview -->
@@ -199,7 +199,7 @@
                <div class="form-group">
                   <label class="col-md-4 control-label" for="ig">What is this label's Instagram URL? Please use the format: https://instagram.com/</label>
                   <div class="col-md-4">
-                     <input type="url" pattern="https://[www]?instagram.com/.*" id="ig" name="ig" placeholder="https://instagram.com/fashionLabelInstagram" class="form-control input-md">
+                     <input type="url" pattern="https:\/\/(www\.)?instagram.com\/.*" id="ig" name="ig" placeholder="https://instagram.com/fashionLabelInstagram" class="form-control input-md">
                   </div>
                </div>
                <!-- Text input-->
@@ -209,7 +209,6 @@
                      <input type="url" id="website" name="website" placeholder="https://fashionLabelWebsite.com" class="form-control input-md">
                   </div>
                </div>
-               <!-- <div class="g-recaptcha" data-sitekey="6Lc9GLAZAAAAAPxzrj7aR666vFdo5iUl33JOkomc" data-theme="light" data-size="normal" data-image="image"></div> -->
                <!-- Button -->
                <div class="form-group">
                   <div class="col-md-4">
@@ -231,7 +230,6 @@
       <!-- Initialize Firebase -->
       <script src="/__/firebase/init.js"></script>
       <script type="module" src="./js/submitForm.js"></script>
-      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script>
          var labelPicturePreview = document.getElementById('label_picture_preview');

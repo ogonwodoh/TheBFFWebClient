@@ -107,9 +107,7 @@ function handlePendingLabelUpdates(response) {
   if(response.data === null) {
     return;
   }
-  return alert("Rejected : " + (response.data.newRejects != null ? response.data.newRejects.toString() : "[]")
-    + "\nApproved: " + (response.data.newApprovals != null ? response.data.newApprovals.toString() : "[]")
-    + "\nPublished: " + (response.data.newPublishes != null ? response.data.newPublishes.toString() : "[]"));
+  return alert("Refresh to see updates");
 }
 
 function addRow(pendingFashionLabel) {
@@ -159,10 +157,10 @@ function addRow(pendingFashionLabel) {
     }).toString();
 
     let igUrlCell = row.insertCell(10);
-    igUrlCell.innerHTML = "<a href=" + pendingFashionLabel.instagramUrl + " target=\"_blank\">" + pendingFashionLabel.instagramUrl+ "</a>";
+    igUrlCell.innerHTML = "<a href=http://" + pendingFashionLabel.instagramUrl + " target=\"_blank\">" + pendingFashionLabel.instagramUrl+ "</a>";
 
     let websiteUrlCell = row.insertCell(11);
-    websiteUrlCell.innerHTML = "<a href=" + pendingFashionLabel.websiteUrl + " target=\"_blank\">" + pendingFashionLabel.websiteUrl + "</a>";
+    websiteUrlCell.innerHTML = "<a href=http://" + pendingFashionLabel.websiteUrl + " target=\"_blank\">" + pendingFashionLabel.websiteUrl + "</a>";
 
     let exampleImgPathCell = row.insertCell(12);
     storage.ref(pendingFashionLabel.exampleImgPath).getDownloadURL().then(function(url) {
