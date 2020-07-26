@@ -25,6 +25,8 @@ function firebasePush() {
     let itemPrice = form.querySelector('#item_description_price').value;
     let igUrl = form.querySelector('#ig').value;
     let website = form.querySelector('#website').value;
+    let phoneNumber = form.querySelector('#phoneNumber').value
+    let labelEmail = form.querySelector('#labelEmail').value
     let offerings = [];
 
     let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
@@ -57,10 +59,12 @@ function firebasePush() {
         instagramUrl: igUrl,
         isBlackOwned: true,
         labelImgPath: mainPicFileName,
+        labelEmail: labelEmail,
         labelName: labelName,
         labelOwner: labelOwner,
         lowestPriceItem: parseInt(lowestPrice, 10),
         offerings: offerings,
+        phoneNumber: phoneNumber,
         status: "PENDING",
         submittedBy: submitterFirstName + " " + submitterLastName,
         submittedByEmail: submitterEmail,

@@ -26,6 +26,9 @@ async function firebasePush() {
     }
 
     // region UPLOAD PICS
+    let pic_preview = document.getElementById('post_pic_preview');
+    let height = pic_preview.height;
+    let width = pic_preview.width;
     let feedPicFileName = labelName.toLowerCase().replace(/ /g, "_").concat('_feed_post_' + Date.now());
     let feedPicStorageRef = firebase.storage().ref(FEED_POST_FILE + feedPicFileName);
     let feedPicFile = pic.files[0];
@@ -38,6 +41,8 @@ async function firebasePush() {
         fashionLabelName: labelName,
         fashionLabelId: id,
         imgPath: FEED_POST_FILE + feedPicFileName,
+        width: width,
+        height: height,
     };
     postRef.set(data);
     postRef.update({

@@ -25,22 +25,23 @@
             <fieldset>
                <!-- Form Name -->
                <legend align="center">Please enter the information as correctly as possible since this will be used directly for the app listing.</legend>
+               <p style="text-align:center"> All fields marked with * are required.</p>
                <!-- Text input-->
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="submitter_first_name">Your First Name</label>
+                  <label class="col-md-4 control-label" for="submitter_first_name">Your First Name *</label>
                   <div class="col-md-4">
                      <input id="submitter_first_name" name="submitter_first_name" type="text" placeholder="" class="form-control input-md" required>
                   </div>
                </div>
                <!-- Text input-->
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="submitter_last_name">Your Last Name</label>
+                  <label class="col-md-4 control-label" for="submitter_last_name">Your Last Name *</label>
                   <div class="col-md-4">
                      <input id="submitter_last_name" name="submitter_last_name" type="text" class="form-control input-md" required>
                   </div>
                </div>
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="submitter_email">Your email:</label>
+                  <label class="col-md-4 control-label" for="submitter_email">Your email: *</label>
                   <div class="col-md-4">
                      <input type="email" id="submitter_email" name="submitter_email" class="form-control input-md"  required>
                   </div>
@@ -48,28 +49,28 @@
                <hr>
                <!-- Text input-->
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="label_name">Label Name</label>
+                  <label class="col-md-4 control-label" for="label_name">Label Name *</label>
                   <div class="col-md-4">
                      <input id="label_name" name="label_name" type="text" placeholder="" class="form-control input-md" required>
                   </div>
                </div>
                <!-- Text input-->
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="label_owner_name">Label Owner or Founder Name</label>
+                  <label class="col-md-4 control-label" for="label_owner_name">Label Owner(s) or Founder Name(s) *</label>
                   <div class="col-md-4">
                      <input id="label_owner_name" name="label_owner_name" type="text" placeholder="" class="form-control input-md" required>
                   </div>
                </div>
                <!-- Textarea -->
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="label_desc">What is this label about? What is the mission statement or motivation behind the label?</label>
+                  <label class="col-md-4 control-label" for="label_desc">What is this label about? What is the mission statement or motivation behind the label? *</label>
                   <div class="col-md-4">
                      <textarea class="form-control" id="label_desc" name="label_desc" required></textarea>
                   </div>
                </div>
                <!-- Multiple Radios -->
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="black_owned">Is this business fully or partially Black-owned?</label>
+                  <label class="col-md-4 control-label" for="black_owned">Is this business fully or partially Black-owned? *</label>
                   <div class="col-md-4">
                      <div class="radio">
                         <label for="black_owned-0">
@@ -87,7 +88,7 @@
                </div>
                <!-- File Button -->
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="label_picture">Please upload a 1:1 aspect ratio picture that will be used to represent the brand on the Black Fashion Finder app. Accepted file types are .png,.jpeg, and .gif.</label>
+                  <label class="col-md-4 control-label" for="label_picture">Please upload a 1:1 aspect ratio picture that will be used to represent the brand on the Black Fashion Finder app. Accepted file types are .png,.jpeg, and .gif. *</label>
                   <div class="col-md-4">
                      <input id="label_picture" name="label_picture" class="input-file" type="file" accept="image/png, image/jpeg, image/gif"  onchange="document.getElementById('label_picture_preview').src = window.URL.createObjectURL(this.files[0])" required>
                   </div>
@@ -99,7 +100,7 @@
                <hr>
                <!-- Multiple Checkboxes -->
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="cost_checkboxes">What does this label sell?</label>
+                  <label class="col-md-4 control-label" for="cost_checkboxes">What does this label sell? *</label>
                   <div class="col-md-4">
                      <div class="checkbox">
                         <label for="checkboxes-0">
@@ -129,44 +130,44 @@
                </div>
                <!-- Text input-->
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="lowest_price">What is the lowest priced item sold by the label (in USD)?</label>
+                  <label class="col-md-4 control-label" for="lowest_price">What is the lowest priced item sold by the label (in USD)? *</label>
                   <div class="col-md-4">
                      <input id="lowest_price" name="lowest_price" type="number" placeholder="" class="form-control input-md" required="">
                   </div>
                </div>
                <!-- Text input-->
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="highest_price">What is the highest priced item sold by the label (in USD)?</label>
+                  <label class="col-md-4 control-label" for="highest_price">What is the highest priced item sold by the label (in USD)? *</label>
                   <div class="col-md-4">
                      <input id="highest_price" name="highest_price" type="number" placeholder="" class="form-control input-md" required="">
                   </div>
                </div>
                <!-- Multiple Radios -->
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="price_range">What is the approximate price range of the label's options?</label>
+                  <label class="col-md-4 control-label" for="price_range">What is the approximate price range of most of the label's options? *</label>
                   <div class="col-md-4">
                      <div class="radio">
                         <label for="price-range-0">
                         <input type="radio" name="price_range" id="price_range-0" value="$" checked="checked">
-                        $0 - $75
+                        $0 - $100
                         </label>
                      </div>
                      <div class="radio">
                         <label for="price-range-1">
                         <input type="radio" name="price_range" id="price range-1" value="$$">
-                        $25 - $150
+                        $100 - $500
                         </label>
                      </div>
                      <div class="radio">
                         <label for="price-range-2">
                         <input type="radio" name="price_range" id="price range-2" value="$$$">
-                        $75 - $300
+                        $500 - $1000
                         </label>
                      </div>
                      <div class="radio">
                         <label for="price-range-3">
                         <input type="radio" name="price_range" id="price range-3" value="$$$$">
-                        $300+
+                        $1000+
                         </label>
                      </div>
                   </div>
@@ -176,7 +177,7 @@
 
                <!-- File Button -->
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="item_picture">Please a picture of an item the brand sells. Accepted file types are .png,.jpeg, and .gif.</label>
+                  <label class="col-md-4 control-label" for="item_picture">Please a picture of an item the brand sells. Accepted file types are .png,.jpeg, and .gif. *</label>
                   <div class="col-md-4">
                      <input id="item_picture" name="item_picture" class="input-file" type="file" accept="image/png, image/jpeg, image/gif" onchange="document.getElementById('item_picture_preview').src = window.URL.createObjectURL(this.files[0])" required>
                   </div>
@@ -186,13 +187,13 @@
                   <img id="item_picture_preview" height="150"/>
                </div>
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="item_description">What is the name of this item?</label>
+                  <label class="col-md-4 control-label" for="item_description">What is the name of this item? *</label>
                   <div class="col-md-4">
                      <input id="item_description" name="item_description" type="text" placeholder="" class="form-control input-md" required="">
                   </div>
                </div>
                <div class="form-group">
-                  <label class="col-md-4 control-label" for="item_description_price">What is the price of this item (in USD)?</label>
+                  <label class="col-md-4 control-label" for="item_description_price">What is the price of this item (in USD)? *</label>
                   <div class="col-md-4">
                      <input id="item_description_price" name="item_description_price" type="number" placeholder="" class="form-control input-md" required="">
                   </div>
@@ -210,6 +211,18 @@
                   <label class="col-md-4 control-label" for="website">What is this label's website? Please use the format: https://</label>
                   <div class="col-md-4">
                      <input type="url" id="website" name="website" placeholder="https://fashionLabelWebsite.com" class="form-control input-md">
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="website">What is this label's phone number?</label>
+                  <div class="col-md-4">
+                     <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="123-456-7890" class="form-control input-md">
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="website">What is this label's email?</label>
+                  <div class="col-md-4">
+                     <input type="email" id="labelEmail" name="labelEmail" placeholder="labelName@labelName.com" class="form-control input-md">
                   </div>
                </div>
                <!-- Button -->
@@ -230,6 +243,7 @@
       <script src="/__/firebase/7.16.0/firebase-app.js"></script>
       <script src="/__/firebase/7.16.0/firebase-firestore.js"></script>
       <script src="/__/firebase/7.16.0/firebase-storage.js"></script>
+      <script src="/__/firebase/7.16.0/firebase-auth.js"></script>
       <!-- Initialize Firebase -->
       <script src="/__/firebase/init.js"></script>
       <script type="module" src="./js/submitForm.js"></script>
