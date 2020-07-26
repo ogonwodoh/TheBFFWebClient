@@ -23,6 +23,8 @@ const query = `
       labelOwner
       offerings
       websiteUrl
+      phoneNumber
+      labelEmail
       notes
       submittedBy
       submittedByEmail
@@ -104,6 +106,7 @@ function getArrayToStringToString(arr) {
 }
 
 function handlePendingLabelUpdates(response) {
+  console.log(response)
   if(response.data === null) {
     return;
   }
@@ -162,22 +165,28 @@ function addRow(pendingFashionLabel) {
     let websiteUrlCell = row.insertCell(11);
     websiteUrlCell.innerHTML = "<a href=http://" + pendingFashionLabel.websiteUrl + " target=\"_blank\">" + pendingFashionLabel.websiteUrl + "</a>";
 
-    let exampleImgPathCell = row.insertCell(12);
+    let labelEmailCell = row.insertCell(12);
+    labelEmailCell.innerHTML = pendingFashionLabel.labelEmail;
+
+    let telephoneCell = row.insertCell(13);
+    telephoneCell.innerHTML = pendingFashionLabel.phoneNumber;
+
+    let exampleImgPathCell = row.insertCell(14);
     storage.ref(pendingFashionLabel.exampleImgPath).getDownloadURL().then(function(url) {
       let cellContents = url ? "<a href=" + url + " target=\"_blank\"> Example Item </a>" : "Not found";
       exampleImgPathCell.innerHTML = cellContents;
     });
 
-    let exampleItemDescCell = row.insertCell(13);
+    let exampleItemDescCell = row.insertCell(15);
     exampleItemDescCell.innerHTML = pendingFashionLabel.exampleImgDesc;
 
-    let exampleImgPriceCell = row.insertCell(14);
+    let exampleImgPriceCell = row.insertCell(16);
     exampleImgPriceCell.innerHTML = "$" + pendingFashionLabel.exampleImagePrice;
 
-    let submittedByCell = row.insertCell(15);
+    let submittedByCell = row.insertCell(17);
     submittedByCell.innerHTML = pendingFashionLabel.submittedBy;
 
-    let submittedByEmail = row.insertCell(16);
+    let submittedByEmail = row.insertCell(18);
     submittedByEmail.innerHTML = "<a href=mailto:" + pendingFashionLabel.submittedByEmail + ">" + pendingFashionLabel.submittedByEmail + "</a>"
 }
 

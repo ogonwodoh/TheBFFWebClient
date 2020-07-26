@@ -55,16 +55,22 @@ function addRow(fashionLabel) {
     let websiteUrlCell = row.insertCell(10);
     websiteUrlCell.innerHTML = "<a href=http://" + fashionLabel.websiteUrl + " target=\"_blank\">" + fashionLabel.websiteUrl + "</a>";
 
-    let exampleImgPathCell = row.insertCell(11);
+    let labelEmailCell = row.insertCell(11);
+    labelEmailCell.innerHTML = fashionLabel.labelEmail;
+
+    let telephoneCell = row.insertCell(12);
+    telephoneCell.innerHTML = fashionLabel.phoneNumber;
+
+    let exampleImgPathCell = row.insertCell(13);
     storage.ref(fashionLabel.exampleImgPath).getDownloadURL().then(function(url) {
       let cellContents = url ? "<a href=" + url + " target=\"_blank\"> Example Item </a>" : "Not found";
       exampleImgPathCell.innerHTML = cellContents;
     });
 
-    let exampleItemDescCell = row.insertCell(12);
+    let exampleItemDescCell = row.insertCell(14);
     exampleItemDescCell.innerHTML = fashionLabel.exampleImgDesc;
 
-    let exampleImgPriceCell = row.insertCell(13);
+    let exampleImgPriceCell = row.insertCell(15);
     exampleImgPriceCell.innerHTML = "$" + fashionLabel.exampleImagePrice;
   }
 
@@ -112,6 +118,8 @@ function performFetch(isInitialFetch) {
           lowestPriceItem
           offerings
           websiteUrl
+          phoneNumber
+          labelEmail
         }
         hasMore
         nextId
