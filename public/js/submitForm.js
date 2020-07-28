@@ -29,6 +29,10 @@ function firebasePush() {
     let labelEmail = form.querySelector('#labelEmail').value
     let offerings = [];
 
+    let exampleItemPicPreview = document.getElementById('item_picture_preview');
+    let exampleItemPicHeight = exampleItemPicPreview.height;
+    let exampleItemPicWidth = exampleItemPicPreview.width;
+
     let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
     for (var checkbox of checkboxes) {
         offerings.push(checkbox.value);
@@ -52,9 +56,11 @@ function firebasePush() {
         id: pendingCollectionsRef.id,
         aboutStatement: missionStatement,
         avgPriceRange: range,
-        exampleImgDesc: itemDesc,
-        exampleImgPath: examplePicFileName,
         exampleImagePrice: parseInt(itemPrice, 10),
+        exampleImgDesc: itemDesc,
+        exampleImgHeight: exampleItemPicHeight,
+        exampleImgPath: examplePicFileName,
+        exampleImgWidth: exampleItemPicWidth,
         highestPriceItem: parseInt(highestPrice, 10),
         instagramUrl: igUrl,
         isBlackOwned: true,
