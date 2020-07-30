@@ -52,5 +52,19 @@
       <!-- Initialize Firebase -->
     <script src="/__/firebase/init.js"></script>
     <script type="module" src="./js/login.js"></script>
+    <script>
+      firebase.auth().onAuthStateChanged(user => {
+        if(user) {
+          window.location = 'admin/adminHome.html'; //If User is not logged in, redirect to login page
+        }
+      });
+
+      let signOut = function() {
+        firebase.auth().signOut()
+          .catch(function(error) {
+            alert('Unable to sign out');
+          });
+        }
+    </script>
   </body>
 </html>

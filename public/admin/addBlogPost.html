@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>The Black Fashion Finder | Add Blog Post</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+      <meta http-equiv="Pragma" content="no-cache" />
+      <meta http-equiv="Expires" content="0" />
+      <link rel="stylesheet" href="../css/main.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   </head>
+  <body>
+    <div class="parent">
+      <div class="header">
+         <a href="../index.html" class="logo">THE BLACK FASHION FINDER</a>
+         <div class="header-right">
+            <a href="../index.html">Home</a>
+            <a href="../submit.html">Submit a Fashion Label</a>
+            <a href="adminHome.html"> Admin Home </a>
+            <a href="pending.html">Pending Labels </a>
+            <a href="addFeedPost.html"> Add Feed Post </a>
+            <a href="fashionLabels.html"> Fashion Labels </a>
+            <a class="active" href="addBlogPost.html"> Add Blog Post </a>
+            <a href="" onclick=signOut()> Sign Out </a>
+         </div>
+      </div>
+      <div class="form">
+         <h1 style="text-align:center">Publish a Blog Post</h1>
+         <form class="form-horizontal blog-post-form" name="blog_post_form">
+            <fieldset>
+               <!-- Text input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="blog_title"> Post Title </label>
+                  <div class="col-md-4">
+                     <input id="blog_title" name="blog_title" type="text" placeholder="" class="form-control input-md" required>
+                  </div>
+               </div>
+               <!-- Text input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="post_type">Post Type</label>
+                  <div class="col-md-4">
+                     <input id="post_type" name="post_type" type="text" class="form-control input-md" required>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="post_url">URL</label>
+                  <div class="col-md-4">
+                     <input id="post_url" name="post_url" type="url" class="form-control input-md" required>
+                  </div>
+               </div>
+               <!-- File Button -->
+               <div class="form-group">
+                  <div class="col-md-4">
+                     <input id="post_pic" name="post_pic" class="input-file" type="file" accept="image/png, image/jpeg, image/gif"  onchange="document.getElementById('post_pic_preview').src = window.URL.createObjectURL(this.files[0])" required>
+                  </div>
+               </div>
+               <!-- File preview -->
+               <div class="form-group" style="margin-left: 16px">
+                  <img id="post_pic_preview" height="150"/>
+               </div>
+               <!-- Button -->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="singlebutton"></label>
+                  <div class="col-md-4">
+                     <button id="singlebutton" name="singlebutton" class="btn btn-primary" type="submit">Post</button>
+                  </div>
+               </div>
+            </fieldset>
+         </form>
+       </div>
+
+
+    </div>
+
+
+    <script src="/__/firebase/7.16.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.16.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/7.16.0/firebase-storage.js"></script>
+    <script src="/__/firebase/7.16.0/firebase-auth.js"></script>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="module" src="../js/addBlogPost.js"></script>
+    <script>
+      firebase.auth().onAuthStateChanged(user => {
+        if(!user) {
+          window.location = '../login.html'; //If User is not logged in, redirect to login page
+        }
+      });
+
+      let signOut = function() {
+        firebase.auth().signOut()
+          .catch(function(error) {
+            alert('Unable to sign out');
+          });
+        }
+    </script>
+  </body>
+</html>
