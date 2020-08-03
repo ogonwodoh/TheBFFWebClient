@@ -6,9 +6,11 @@
       <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
       <meta http-equiv="Pragma" content="no-cache" />
       <meta http-equiv="Expires" content="0" />
+
       <link rel="stylesheet" href="./css/submitForm.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
    </head>
    <body>
      <div class="parent">
@@ -126,6 +128,27 @@
                         Shoes
                         </label>
                      </div>
+                  </div>
+               </div>
+               <div class="form-group">
+                 <label class="col-md-4 control-label" for="publish_pending_labels">Select up to 3 tags that describe your label. Press shift to select multiple. Using tags may help people find your label.</label>
+                 <div class="col-md-4">
+                   <select name="tags" multiple="" class="selectpicker" id="tags">
+                     <option value="#athletic">#athletic</option>
+                     <option value="#basics">#basics</option>
+                     <option value="#formal">#formal</option>
+                     <option value="#going-out">#going-out</option>
+                     <option value="#lingerie">#lingerie</option>
+                     <option value="#luxury">#luxury</option>
+                     <option value="#petite">#petite</option>
+                     <option value="#plus-size">#plus-size</option>
+                     <option value="#queer-owned">#queer-owned</option>
+                     <option value="#swimwear">#swimear</option>
+                     <option value="#t-shirts">#t-shirts</option>
+                     <option value="#tall-friendly">#tall-friendly</option>
+                     <option value="#women-owned">#women-owned</option>
+                     <option value="#workwear">#workwear</option>
+                   </select>
                   </div>
                </div>
                <!-- Text input-->
@@ -248,6 +271,8 @@
       <script src="/__/firebase/init.js"></script>
       <script type="module" src="./js/submitForm.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
       <script>
          var labelPicturePreview = document.getElementById('label_picture_preview');
          var highestItemPrice = document.getElementById('highest_price');

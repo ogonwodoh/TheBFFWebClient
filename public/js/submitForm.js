@@ -37,6 +37,7 @@ function firebasePush() {
     for (var checkbox of checkboxes) {
         offerings.push(checkbox.value);
     }
+    let tags = $('#tags').val();
 
     // region UPLOAD PICS
     let mainPicFileName = labelName.toLowerCase().replace(/ /g, "_").concat('_main');
@@ -74,6 +75,7 @@ function firebasePush() {
         status: "PENDING",
         submittedBy: submitterFirstName + " " + submitterLastName,
         submittedByEmail: submitterEmail,
+        tags: tags,
         websiteUrl: website
     };
     pendingCollectionsRef.set(data);
