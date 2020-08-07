@@ -47,7 +47,7 @@
             <div class="form-group">
               <label class="col-md-4 control-label" for="publish_pending_labels">Post these pending labels. You can update multiple by adding IDs in comma separated values (no spaces).</label>
               <div class="col-md-4">
-                <input id="publish_pending_labels" name="publish_pending_labels" type="text" placeholder="" pattern="[0-9a-zA-Z]+(,[0-9a-zA-Z]+)*" class="form-control input-md">
+                <textarea class="form-control input-md" id="publish_pending_labels" name="publish_pending_labels" type="text" placeholder="" pattern="[0-9a-zA-Z]+(,[0-9a-zA-Z]+)*" required></textarea>
               </div>
             </div>
             <div class="col-md-4">
@@ -75,6 +75,7 @@
 
       <h4 style="text-align:center"> Current Pending Fashion Labels </h4>
       <div class="tableContainer">
+        <input type="text" id="filterInput" onkeyup="filter()" placeholder="Filter by status">
         <table id="pendingLabelsTable">
           <tr>
             <th>ID</th>
@@ -117,6 +118,28 @@
             .catch(function(error) {
               alert('Unable to sign out');
             });
+          }
+
+          function filter() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("filterInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("pendingLabelsTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+              td = tr[i].getElementsByTagName("td")[1];
+              if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+                } else {
+                  tr[i].style.display = "none";
+                }
+              }
+            }
           }
       </script>
    </body>
