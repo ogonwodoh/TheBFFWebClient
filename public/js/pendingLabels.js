@@ -137,7 +137,7 @@ function addRow(pendingFashionLabel) {
     labelOwnerCell.innerHTML = pendingFashionLabel.labelOwner;
 
     let aboutStatementCell = row.insertCell(4);
-    aboutStatementCell.innerHTML = pendingFashionLabel.aboutStatement;
+    aboutStatementCell.innerHTML = pendingFashionLabel.aboutStatement.substring(0, 100);
 
     let labelImageCell = row.insertCell(5);
     storage.ref(pendingFashionLabel.labelImgPath).getDownloadURL().then(function(url) {
