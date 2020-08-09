@@ -9,13 +9,15 @@ if (form) {
         var auth = null;
         firebase
           .auth()
-          .signInWithEmailAndPassword(email, password)
-          .then( function(user){
-            auth = user;
+          .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+          .then( function() {
+              return firebase.auth().signInWithEmailAndPassword(email, password);
+            })
+          .then(function() {
             setTimeout(function(){
               window.location.replace("../admin/adminHome.html")
               }, 1000)
-            })
+          })
           .catch(function(error){
             alert("Login Failed : " + error);
           });
