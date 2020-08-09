@@ -76,8 +76,15 @@
       <h4 style="text-align:center"> Current Pending Fashion Labels </h4>
       <div class="tableContainer">
         <input type="text" id="filterInput" onkeyup="filter()" placeholder="Filter by status">
+        <div class="form-group">
+           <label class="col-md-4 control-label" for="quickApproveBtn"></label>
+           <div class="col-md-4">
+              <button id="quickApproveBtn" name="quickApproveBtn" class="btn btn-primary" type="submit">Submit</button>
+           </div>
+        </div>
         <table id="pendingLabelsTable">
           <tr>
+            <th>Quick Approve</th>
             <th>ID</th>
             <th>Status</th>
             <th>Label Name</th>
@@ -106,6 +113,8 @@
       <!-- Initialize Firebase -->
       <script src="/__/firebase/init.js"></script>
       <script type="module" src="../js/pendingLabels.js"></script>
+      <script type="module" src="../js/quickApprove.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script>
         firebase.auth().onAuthStateChanged(user => {
           if(!user) {
@@ -130,7 +139,7 @@
 
             // Loop through all table rows, and hide those who don't match the search query
             for (i = 0; i < tr.length; i++) {
-              td = tr[i].getElementsByTagName("td")[1];
+              td = tr[i].getElementsByTagName("td")[2];
               if (td) {
                 txtValue = td.textContent || td.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {

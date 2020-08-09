@@ -98,7 +98,7 @@ function handleFormSubmit() {
     }
 }
 
-function getArrayToStringToString(arr) {
+export function getArrayToStringToString(arr) {
   if (arr === null || arr.length === 0) {
     return "[]";
   }
@@ -106,7 +106,6 @@ function getArrayToStringToString(arr) {
 }
 
 function handlePendingLabelUpdates(response) {
-  console.log(response)
   if(response.data === null) {
     return;
   }
@@ -124,69 +123,72 @@ function addRow(pendingFashionLabel) {
     let rowCount = table.rows.length;
     let row = table.insertRow(rowCount);
 
-    let idCell = row.insertCell(0);
+    let checkBoxCell = row.insertCell(0);
+    checkBoxCell.innerHTML = `<input type="checkbox" name="quick_approve" value="${pendingFashionLabel.id}"/>`;
+
+    let idCell = row.insertCell(1);
     idCell.innerHTML = pendingFashionLabel.id;
 
-    let statusCell = row.insertCell(1);
+    let statusCell = row.insertCell(2);
     statusCell.innerHTML = pendingFashionLabel.status;
 
-    let labelNameCell = row.insertCell(2);
+    let labelNameCell = row.insertCell(3);
     labelNameCell.innerHTML = pendingFashionLabel.labelName;
 
-    let labelOwnerCell = row.insertCell(3);
+    let labelOwnerCell = row.insertCell(4);
     labelOwnerCell.innerHTML = pendingFashionLabel.labelOwner;
 
-    let aboutStatementCell = row.insertCell(4);
+    let aboutStatementCell = row.insertCell(5);
     aboutStatementCell.innerHTML = pendingFashionLabel.aboutStatement.substring(0, 100);
 
-    let labelImageCell = row.insertCell(5);
+    let labelImageCell = row.insertCell(6);
     storage.ref(pendingFashionLabel.labelImgPath).getDownloadURL().then(function(url) {
       let cellContents = url ? "<a href=" + url + " target=\"_blank\"> Label Image </a>" : "Not found";
       labelImageCell.innerHTML = cellContents;
     });
 
-    let priceRangeCell = row.insertCell(6);
+    let priceRangeCell = row.insertCell(7);
     priceRangeCell.innerHTML = pendingFashionLabel.avgPriceRange;
 
-    let lowestPriceItemCell = row.insertCell(7);
+    let lowestPriceItemCell = row.insertCell(8);
     lowestPriceItemCell.innerHTML = "$" + pendingFashionLabel.lowestPriceItem;
 
-    let highestPriceItemCell = row.insertCell(8);
+    let highestPriceItemCell = row.insertCell(9);
     highestPriceItemCell.innerHTML = "$" + pendingFashionLabel.highestPriceItem;
 
-    let offeringsCell = row.insertCell(9);
+    let offeringsCell = row.insertCell(10);
     offeringsCell.innerHTML = pendingFashionLabel.offerings.map(function (key) {
       return " " + key;
     }).toString();
 
-    let igUrlCell = row.insertCell(10);
+    let igUrlCell = row.insertCell(11);
     igUrlCell.innerHTML = "<a href=http://" + pendingFashionLabel.instagramUrl + " target=\"_blank\">" + pendingFashionLabel.instagramUrl+ "</a>";
 
-    let websiteUrlCell = row.insertCell(11);
+    let websiteUrlCell = row.insertCell(12);
     websiteUrlCell.innerHTML = "<a href=http://" + pendingFashionLabel.websiteUrl + " target=\"_blank\">" + pendingFashionLabel.websiteUrl + "</a>";
 
-    let labelEmailCell = row.insertCell(12);
+    let labelEmailCell = row.insertCell(13);
     labelEmailCell.innerHTML = pendingFashionLabel.labelEmail;
 
-    let telephoneCell = row.insertCell(13);
+    let telephoneCell = row.insertCell(14);
     telephoneCell.innerHTML = pendingFashionLabel.phoneNumber;
 
-    let exampleImgPathCell = row.insertCell(14);
+    let exampleImgPathCell = row.insertCell(15);
     storage.ref(pendingFashionLabel.exampleImgPath).getDownloadURL().then(function(url) {
       let cellContents = url ? "<a href=" + url + " target=\"_blank\"> Example Item </a>" : "Not found";
       exampleImgPathCell.innerHTML = cellContents;
     });
 
-    let exampleItemDescCell = row.insertCell(15);
+    let exampleItemDescCell = row.insertCell(16);
     exampleItemDescCell.innerHTML = pendingFashionLabel.exampleImgDesc;
 
-    let exampleImgPriceCell = row.insertCell(16);
+    let exampleImgPriceCell = row.insertCell(17);
     exampleImgPriceCell.innerHTML = "$" + pendingFashionLabel.exampleImagePrice;
 
-    let submittedByCell = row.insertCell(17);
+    let submittedByCell = row.insertCell(18);
     submittedByCell.innerHTML = pendingFashionLabel.submittedBy;
 
-    let submittedByEmail = row.insertCell(18);
+    let submittedByEmail = row.insertCell(19);
     submittedByEmail.innerHTML = "<a href=mailto:" + pendingFashionLabel.submittedByEmail + ">" + pendingFashionLabel.submittedByEmail + "</a>"
 }
 
