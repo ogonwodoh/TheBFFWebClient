@@ -124,7 +124,8 @@ function addRow(pendingFashionLabel) {
     let row = table.insertRow(rowCount);
 
     let checkBoxCell = row.insertCell(0);
-    checkBoxCell.innerHTML = `<input type="checkbox" name="quick_approve" value="${pendingFashionLabel.id}"/>`;
+    let hasBeenPosted = pendingFashionLabel.status.toLowerCase() === "posted";
+    checkBoxCell.innerHTML = hasBeenPosted ? "N/A" : `<input type="checkbox" name="quick_approve" value="${pendingFashionLabel.id}"/>`;
 
     let idCell = row.insertCell(1);
     idCell.innerHTML = pendingFashionLabel.id;
