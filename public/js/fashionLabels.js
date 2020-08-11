@@ -3,6 +3,8 @@ import config from './secretConsts.js';
 const TABLE_ID = "currentLabelsTable";
 const url = "https://us-central1-theblackfashionfinderv1.cloudfunctions.net/graphql";
 const limit = 20;
+const button = document.getElementById("fetchMoreBtn");
+
 let nextId = null;
 let hasMore = false;
 
@@ -137,3 +139,7 @@ function performFetch(isInitialFetch) {
 }
 
 performFetch(true);
+
+button.addEventListener('click', function(evt) {
+  performFetch(false)
+});

@@ -11,20 +11,18 @@ async function firebasePush() {
         firebase.initializeApp(config);
     }
 
-    let labelName = form.querySelector('#label_name').value;
     let id = form.querySelector('#label_id').value;
     let pic = form.querySelector('#post_pic');
 
     const fashionLabels = await firebase
         .firestore()
         .collection('fashionLabel')
-        .where('labelName', '==', labelName)
         .where('id', '==', id)
         .get();
     if (fashionLabels.docs.length !== 1) {
       return false;
     }
-
+    let labelName = fashionLabels.docs[0].data().labelName
     // region UPLOAD PICS
     let pic_preview = document.getElementById('post_pic_preview');
     let height = pic_preview.height;
@@ -56,9 +54,10 @@ if (form) {
   form.addEventListener('submit', function(evt) {
       evt.preventDefault();
       firebasePush().then((successful) => {
-        form.reset();
-        $('#post_pic_preview').removeAttr('src');
-        //shows alert if everything went well.
+        if (successful) {
+          form.reset();
+          $('#post_pic_preview').removeAttr('src');
+        }
         return alert(successful ? 'Posted' : 'Not posted because label name or id is incorrect.');
       });
     }, false);
