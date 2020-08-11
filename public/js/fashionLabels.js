@@ -27,7 +27,7 @@ function addRow(fashionLabel) {
     labelOwnerCell.innerHTML = fashionLabel.labelOwner;
 
     let aboutStatementCell = row.insertCell(3);
-    aboutStatementCell.innerHTML = fashionLabel.aboutStatement;
+    aboutStatementCell.innerHTML = fashionLabel.aboutStatement.substring(0, 100);
 
     let labelImageCell = row.insertCell(4);
     storage.ref(fashionLabel.labelImgPath).getDownloadURL().then(function(url) {
@@ -86,7 +86,7 @@ function handleResponse(graphQLResponse) {
       .insertAdjacentHTML(
         'beforeend', '<div style="text-align: center; margin-bottom: 16px;"> No More Items.</div>');
   }
-  hasMore = response.hasMore === 'true';
+  hasMore = response.hasMore === true;
   if (!hasMore) {
     document.getElementById("fetchMore").style.display = "none";
   }
