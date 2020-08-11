@@ -102,9 +102,10 @@ function performFetch(isInitialFetch) {
   if (!hasMore && !isInitialFetch) {
     return;
   }
+  let startAt = nextId == null ? null : `"${nextId}"`;
   let query = `
     query {
-      fashionLabelsPaginated(input: {limit: ${limit}, startAt: ${nextId}}) {
+      fashionLabelsPaginated(input: {limit: ${limit}, startAt: ${startAt}}) {
         labels {
           id
           aboutStatement
@@ -141,5 +142,5 @@ function performFetch(isInitialFetch) {
 performFetch(true);
 
 button.addEventListener('click', function(evt) {
-  performFetch(false)
+  performFetch(false);
 });
