@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+   <head >
+      <title>The Black Fashion Finder | Blog </title>
+      <link rel="icon" href="../assets/logo.png">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" href="">
+      <link rel="stylesheet" href="../../css/main.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <style>
+        p {
+          font-size: 14px;
+          text-align: left;
+        }
+      </style>
+   </head >
+   <body>
+      <div class="parent" id="parent">
+        <div style="margin:24px;">
+           <h3 style="text-align:center"> The Black Lives Matter Movement x Black
+             Fashion: 5 Black Designers who are Inserting Activist Ideas into their Fashion </h3>
+        </div>
+        <img src="main.jpeg" width="100%"/>
+
+        <div style="padding-top:16px;padding-left: 16px; padding-right: 16px"><b>What
+          has been the fashion community&#39;s response to the 2020 BLM movement?</b></div>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;The Black Lives Matter Movement has
+          challenged all facets of society to examine how they contribute to
+          systemic racism and the fashion industry is no exception. This year
+          we saw fashion stores vandalized during Black Lives Matter protests
+          and calls on social media for fashion brands to take meaningful action
+          towards fighting system racism.
+          <br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;The response from most major fashion brands
+          has been lackluster at best. When the Black Lives Matter movement gained traction in late
+          May, brands were slow and hesitant to respond. Brands like Fendi and
+          Revolve posed graphics with short, nondescript messages, shared a
+          couple fashion pics of black people, then went back to posting mostly
+          white fashion models and ignoring the situation. Some major brands did
+          make donations. Nike announced a $40 million dollar commitment to
+          support the Black community in the U.S. and, after backlash, Revolve
+          made amends for their original response by pledging to donate $1
+          million dollars to the fight for racial inequality. While these
+          efforts sound promising, only time will tell if these companies follow
+          through with their pledges and realize that making donations is just
+          the tip of the iceberg.
+        </p>
+        <div style="text-align:center; font-weight:bold; width: 90%; margin-left: auto; margin-right: auto;font-size: 14px">
+          <i><q>Fashion houses have been slow to donate to the Black Lives Matter
+          Movement because a social revolt is not glamorous enough</q> - Pam Boy
+          <br/>
+          <br/>
+          <q>To me, a lot of this stuff right now seems very unnatural and just
+          forced from a lot of these brands, so they won&#39;t get &apos;canceled.&apos;</q> - Zac Clark
+          </i>
+        </div>
+        <div style="padding-top:16px;padding-left: 16px; padding-right: 16px"><b>Why is it important that Black fashion
+          designers are involved in the conversation?</b></div>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;The Black Lives Matter Movement has
+            challenged all facets of society to examine how they contribute to
+            systemic racism and the fashion industry is no exception. This year
+            we saw fashion stores vandalized during Black Lives Matter protests
+            and calls on social media for fashion brands to take meaningful action
+            towards fighting system racism.
+            <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;While the fashion industry as whole has
+            contributed to systemic racism, Black fashion designers have been
+            at the forefront of combating this racism and pushing the industry to do better
+            . In 2017 Telfar Clemens collaborated with White Castle on a collection
+            whose proceeds were used to bail out young people in jail. In 2015,
+            Pyer Moss showcased a Black Lives Matter themed collection. Black
+            fashion designers have exemplified how the fashion industry can fix
+            it&#39;s issues with system racism. During the 2020 Black Lives Matter
+            movement more Black fashion designers are leading the charge in
+            contributing to the movement. Here is a list of some of their efforts:
+          </p>
+          <ol>
+            <li>
+              <div style="font-weight:bold; padding-top:16px;padding-left: 16px;
+              padding-right: 16px">Ginny&#39;s Girl Gang</div>
+              <p>
+                Regina Jones who is the owner of Ginny&#39;s Girl Gang. Regina is an
+                indigenous Gomeroi/Gamilaraay artist and a native of Australia.
+                She sells custom hand-painted jackets with important messages
+                about the stories of Black, indigenous Austrailians.
+              </p>
+              <img src="ginnys.jpeg" width="100%" style="padding-right: 16px"/>
+            </li>
+            <li>
+              <div style="font-weight:bold; padding-top:16px;padding-left: 16px;
+              padding-right: 16px">Fear of God, Off-White, Pyer Moss, Denim Tears, and more</div>
+              <p>
+                Fear of God decided to sell a t-shirt with the initials &apos;GF&apos;
+                for George Floyd, which is it&apos;s brand&apos;s logo flipped. The brand
+                also collaborated with Off-White, Pyer Moss, and Denim Tears,
+                which are all Black owned, and other non-black owned brands to put
+                their logos on the t-shirt and show support for the initiative.
+              </p>
+              <img src="fog.jpg" width="100%" style="padding-right: 16px"/>
+            </li>
+            <li>
+              <div style="font-weight:bold; padding-top:16px;padding-left: 16px;
+              padding-right: 16px">Serendipitous Project</div>
+              <p>
+                Sydney Ziems is the founder of a sustainable jewelry line called
+                Serendipitous Project. In June Ziems decided to donate all of
+                her profits from her sales to the Minnesota Freedom Fund for 2 weeks.
+              </p>
+              <img src="Serendipitous-Project.jpg" width="100%" style="padding-right: 16px"/>
+            </li>
+            <li>
+              <div style="font-weight:bold; padding-top:16px;padding-left: 16px;
+              padding-right: 16px">Renowned</div>
+              <p>
+                Renowned created and sold the &ldquo;HEROES OF BLACKNESS BENEFIT TEE&rdquo;
+                which celebrates people who have fought for Black freedom since
+                the Civil Rights Era. The proceeds of the t-shirt were donated
+                to Black Lives Matter, Reclaim the Block, and the George Floyd Foundation.
+              </p>
+              <img src="renowed.jpg" width="100%" style="padding-right: 16px"/>
+            </li>
+            <li>
+              <div style="font-weight:bold; padding-top:16px;padding-left: 16px;
+              padding-right: 16px">Neon Cowboys</div>
+              <p>
+                Neon Cowboys, a fashion tech brand, donated 100% of profits from
+                their #COVID19 Black GLOW masks to Grassroots Law Project
+                and digital undivided. They donated over $5,000 to these organizations.
+              </p>
+              <img src="glow.jpg" width="100%" style="padding-right: 16px"/>
+            </li>
+          </ol>
+   </body>
+</html>
