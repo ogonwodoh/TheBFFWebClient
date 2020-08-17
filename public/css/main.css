@@ -4,11 +4,11 @@
 html,
 body {
     font-family: "Avenir Next" !important;
-    background-color: #faf6e9;
+    background-color: #fffdf6;
 }
 
 .parent {
-  background-color: #faf6e9;
+  background-color: #fffdf6;
   margin-bottom: -50px;
 }
 
