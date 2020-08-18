@@ -1,0 +1,38 @@
+@import "header.css";
+
+html,
+body {
+    background-color: #fffdf6;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  min-height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+.text {
+  font-family: "Avenir Next" !important;
+  margin-right: 0px;
+}
+
+.app_name {
+  font-family: "Cochin" !important;
+}
+
+.parent {
+  background-color: #fffdf6;
+  padding-bottom: -50px;
+  max-width: 100%;
+  height: 100vh;
+}
+
+.center {
+  float: right;
+  margin-right: 16px;
+  width: 50%
+}

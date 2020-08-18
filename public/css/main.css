@@ -1,5 +1,4 @@
 @import "header.css";
-@import "footer.css";
 
 html,
 body {
@@ -7,8 +6,19 @@ body {
     background-color: #fffdf6;
 }
 
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
 .parent {
   background-color: #fffdf6;
+  min-height: 100%;
   margin-bottom: -50px;
 }
 
@@ -26,5 +36,5 @@ p {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 25%
+  width: 50%
 }
