@@ -163,10 +163,10 @@ function addRow(pendingFashionLabel) {
     }).toString();
 
     let igUrlCell = row.insertCell(11);
-    igUrlCell.innerHTML = "<a href=http://" + pendingFashionLabel.instagramUrl + " target=\"_blank\">" + pendingFashionLabel.instagramUrl+ "</a>";
+    igUrlCell.innerHTML = "<a href="+ pendingFashionLabel.instagramUrl + " target=\"_blank\">" + pendingFashionLabel.instagramUrl+ "</a>";
 
     let websiteUrlCell = row.insertCell(12);
-    websiteUrlCell.innerHTML = "<a href=http://" + pendingFashionLabel.websiteUrl + " target=\"_blank\">" + pendingFashionLabel.websiteUrl + "</a>";
+    websiteUrlCell.innerHTML = "<a href=" + pendingFashionLabel.websiteUrl + " target=\"_blank\">" + pendingFashionLabel.websiteUrl + "</a>";
 
     let labelEmailCell = row.insertCell(13);
     labelEmailCell.innerHTML = pendingFashionLabel.labelEmail;
