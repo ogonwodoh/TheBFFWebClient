@@ -142,54 +142,57 @@ function addRow(pendingFashionLabel) {
     let aboutStatementCell = row.insertCell(5);
     aboutStatementCell.innerHTML = pendingFashionLabel.aboutStatement.substring(0, 100);
 
-    let labelImageCell = row.insertCell(6);
+    let sustainable = row.insertCell(6);
+    sustainable.innerHTML = pendingFashionLabel.sustainable ? pendingFashionLabel.sustainable : "false"
+
+    let labelImageCell = row.insertCell(7);
     storage.ref(pendingFashionLabel.labelImgPath).getDownloadURL().then(function(url) {
       let cellContents = url ? "<a href=" + url + " target=\"_blank\"> Label Image </a>" : "Not found";
       labelImageCell.innerHTML = cellContents;
     });
 
-    let priceRangeCell = row.insertCell(7);
+    let priceRangeCell = row.insertCell(8);
     priceRangeCell.innerHTML = pendingFashionLabel.avgPriceRange;
 
-    let lowestPriceItemCell = row.insertCell(8);
+    let lowestPriceItemCell = row.insertCell(9);
     lowestPriceItemCell.innerHTML = "$" + pendingFashionLabel.lowestPriceItem;
 
-    let highestPriceItemCell = row.insertCell(9);
+    let highestPriceItemCell = row.insertCell(10);
     highestPriceItemCell.innerHTML = "$" + pendingFashionLabel.highestPriceItem;
 
-    let offeringsCell = row.insertCell(10);
+    let offeringsCell = row.insertCell(11);
     offeringsCell.innerHTML = pendingFashionLabel.offerings.map(function (key) {
       return " " + key;
     }).toString();
 
-    let igUrlCell = row.insertCell(11);
+    let igUrlCell = row.insertCell(12);
     igUrlCell.innerHTML = "<a href="+ pendingFashionLabel.instagramUrl + " target=\"_blank\">" + pendingFashionLabel.instagramUrl+ "</a>";
 
-    let websiteUrlCell = row.insertCell(12);
+    let websiteUrlCell = row.insertCell(13);
     websiteUrlCell.innerHTML = "<a href=" + pendingFashionLabel.websiteUrl + " target=\"_blank\">" + pendingFashionLabel.websiteUrl + "</a>";
 
-    let labelEmailCell = row.insertCell(13);
+    let labelEmailCell = row.insertCell(14);
     labelEmailCell.innerHTML = pendingFashionLabel.labelEmail;
 
-    let telephoneCell = row.insertCell(14);
+    let telephoneCell = row.insertCell(15);
     telephoneCell.innerHTML = pendingFashionLabel.phoneNumber;
 
-    let exampleImgPathCell = row.insertCell(15);
+    let exampleImgPathCell = row.insertCell(16);
     storage.ref(pendingFashionLabel.exampleImgPath).getDownloadURL().then(function(url) {
       let cellContents = url ? "<a href=" + url + " target=\"_blank\"> Example Item </a>" : "Not found";
       exampleImgPathCell.innerHTML = cellContents;
     });
 
-    let exampleItemDescCell = row.insertCell(16);
+    let exampleItemDescCell = row.insertCell(17);
     exampleItemDescCell.innerHTML = pendingFashionLabel.exampleImgDesc;
 
-    let exampleImgPriceCell = row.insertCell(17);
+    let exampleImgPriceCell = row.insertCell(18);
     exampleImgPriceCell.innerHTML = "$" + pendingFashionLabel.exampleImagePrice;
 
-    let submittedByCell = row.insertCell(18);
+    let submittedByCell = row.insertCell(19);
     submittedByCell.innerHTML = pendingFashionLabel.submittedBy;
 
-    let submittedByEmail = row.insertCell(19);
+    let submittedByEmail = row.insertCell(20);
     submittedByEmail.innerHTML = "<a href=mailto:" + pendingFashionLabel.submittedByEmail + ">" + pendingFashionLabel.submittedByEmail + "</a>"
 }
 
