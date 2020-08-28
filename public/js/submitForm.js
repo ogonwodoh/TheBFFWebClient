@@ -27,6 +27,7 @@ function firebasePush() {
     let website = form.querySelector('#website').value;
     let phoneNumber = form.querySelector('#phoneNumber').value
     let labelEmail = form.querySelector('#labelEmail').value
+    let sustainable = form.querySelector('input[name="sustainable"]:checked').value;
     let offerings = [];
 
     let exampleItemPicPreview = document.getElementById('item_picture_preview');
@@ -75,6 +76,7 @@ function firebasePush() {
         status: "PENDING",
         submittedBy: submitterFirstName + " " + submitterLastName,
         submittedByEmail: submitterEmail,
+        sustainable: sustainable.toLowerCase() == 'true',
         tags: tags,
         websiteUrl: website
     };
@@ -92,10 +94,10 @@ if (form) {
         let isBlackOwned = isBlackOwnedInput.toLowerCase() === "true"
         if (isBlackOwned) {
             firebasePush();
+            form.reset();
+            $('#label_picture_preview').removeAttr('src');
+            $('#item_picture_preview').removeAttr('src');
         }
-        form.reset();
-        $('#label_picture_preview').removeAttr('src');
-        $('#item_picture_preview').removeAttr('src');
         //shows alert if everything went well.
         return alert(isBlackOwned ? 'Successfully submitted form. We will review your submission.' : 'Failed to submit. Unfortunately we are only accepting Black owned fashion labels and you indicated this label was not Black owned.');
     })
