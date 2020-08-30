@@ -29,6 +29,7 @@ const query = `
       submittedBy
       submittedByEmail
       tags
+      sustainable
     }
   }
 `;
