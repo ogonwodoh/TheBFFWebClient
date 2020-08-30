@@ -90,6 +90,10 @@ function firebasePush() {
 if (form) {
     form.addEventListener('submit', function(evt) {
         evt.preventDefault();
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        if (checkboxes.length === 0) {
+          return alert('Please select at least one offering: Clothing, Accessories, Jewelry, or Shoes. This will help people find your brand.')
+        }
         let isBlackOwnedInput = form.querySelector('input[name="black_owned"]:checked').value;
         let isBlackOwned = isBlackOwnedInput.toLowerCase() === "true"
         if (isBlackOwned) {
