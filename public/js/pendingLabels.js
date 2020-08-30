@@ -28,6 +28,7 @@ const query = `
       notes
       submittedBy
       submittedByEmail
+      tags
     }
   }
 `;
