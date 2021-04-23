@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+   <head >
+      <title>The Black Fashion Finder | Blog </title>
+      <link rel="icon" href="../assets/logo.png">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="../../css/blog.css">
+      <link rel="stylesheet" href="../css/lightgallery.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <style>
+        html,
+        body {
+          font-family: "Avenir" !important;
+        }
+        p {
+          font-size: 18px;
+          text-align: left;
+          font-weight: normal;
+        }
+
+        li {
+          font-weight: bold;
+        }
+
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          grid-gap: 20px;
+          align-items: stretch;
+          width: 100%;
+          margin-bottom: 16px;
+        }
+        .grid img {
+          border: 1px solid #ccc;
+          box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+          max-width: 100%;
+        }
+
+        a {
+          color: white;
+          font-size: 18px;
+        }
+      </style>
+
+   </head >
+   <body>
+      <div class="parent" id="parent">
+        <div style="margin:8px; text-align: center">
+           <h4>5 Sustainable Black-owned Fashion Brands</h4>
+        </div>
+        <p>appy Earth Day! Today we are highlighting five sustainable Black-owned fashion brands that you can find on our app. Be sure to check them out 🍃.</p>
+
+      <div id="lightgallery" class="grid" style="padding:12px">
+
+          <a href="1.png">
+              <img src="1.png">
+          </a>
+
+          <a href="2.png">
+              <img src="2.png">
+          </a>
+
+          <a href="3.png">
+              <img src="3.png">
+          </a>
+          <a href="4.png">
+              <img src="4.png">
+          </a>
+
+          <a href="5.png">
+              <img src="5.png">
+          </a>
+
+          <a href="6.png">
+              <img src="6.png">
+          </a>
+
+          <a href="7.gif">
+              <img src="7.gif">
+          </a>
+
+          <a href="8.gif">
+              <img src="8.gif">
+          </a>
+      </div>
+    </div>
+      <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+      <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
+      <script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
+      <script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
+      <script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
+      <script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
+      <script>
+        lightGallery(document.getElementById('lightgallery'));
+        $('#lightgallery').lightGallery();
+      </script>
+   </body>
