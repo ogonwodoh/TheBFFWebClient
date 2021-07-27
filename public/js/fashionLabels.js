@@ -52,10 +52,10 @@ function addRow(fashionLabel) {
     }).toString();
 
     let igUrlCell = row.insertCell(9);
-    igUrlCell.innerHTML = "<a href=http://" + fashionLabel.instagramUrl + " target=\"_blank\">" + fashionLabel.instagramUrl+ "</a>";
+    igUrlCell.innerHTML = "<a href=" + fashionLabel.instagramUrl + " target=\"_blank\">" + fashionLabel.instagramUrl+ "</a>";
 
     let websiteUrlCell = row.insertCell(10);
-    websiteUrlCell.innerHTML = "<a href=http://" + fashionLabel.websiteUrl + " target=\"_blank\">" + fashionLabel.websiteUrl + "</a>";
+    websiteUrlCell.innerHTML = "<a href=" + fashionLabel.websiteUrl + " target=\"_blank\">" + fashionLabel.websiteUrl + "</a>";
 
     let labelEmailCell = row.insertCell(11);
     labelEmailCell.innerHTML = fashionLabel.labelEmail;
