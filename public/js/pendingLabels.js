@@ -111,7 +111,8 @@ function handlePendingLabelUpdates(response) {
   if(response.data === null) {
     return;
   }
-  return alert("Refresh to see updates");
+  window.location.reload()
+  return alert("New updates loaded");
 }
 
 function addRow(pendingFashionLabel) {
@@ -125,29 +126,35 @@ function addRow(pendingFashionLabel) {
     let rowCount = table.rows.length;
     let row = table.insertRow(rowCount);
 
-    let checkBoxCell = row.insertCell(0);
-    let hasBeenPosted = pendingFashionLabel.status.toLowerCase() === "posted";
-    checkBoxCell.innerHTML = hasBeenPosted ? "N/A" : `<input type="checkbox" name="quick_approve" value="${pendingFashionLabel.id}"/>`;
+    var cellIndex = 0;
 
-    let idCell = row.insertCell(1);
+    let quickApproveCheckBox = row.insertCell(cellIndex++);
+    let hasBeenPosted = pendingFashionLabel.status.toLowerCase() === "posted";
+    quickApproveCheckBox.innerHTML = hasBeenPosted ? "N/A" : `<input type="checkbox" name="quick_approve" value="${pendingFashionLabel.id}"/>`;
+
+    let quickApproveCheckBox = row.insertCell(cellIndex++);
+    let hasBeenRejected = pendingFashionLabel.status.toLowerCase() === "rejected";
+    quickApproveCheckBox.innerHTML = hasBeenRejected ? "N/A" : `<input type="checkbox" name="quick_reject" value="${pendingFashionLabel.id}"/>`;
+
+    let idCell = row.insertCell(cellIndex++);
     idCell.innerHTML = pendingFashionLabel.id;
 
-    let statusCell = row.insertCell(2);
+    let statusCell = row.insertCell(cellIndex++);
     statusCell.innerHTML = pendingFashionLabel.status;
 
-    let labelNameCell = row.insertCell(3);
+    let labelNameCell = row.insertCell(cellIndex++);
     labelNameCell.innerHTML = pendingFashionLabel.labelName;
 
-    let labelOwnerCell = row.insertCell(4);
+    let labelOwnerCell = row.insertCell(cellIndex++);
     labelOwnerCell.innerHTML = pendingFashionLabel.labelOwner;
 
-    let aboutStatementCell = row.insertCell(5);
+    let aboutStatementCell = row.insertCell(cellIndex++);
     aboutStatementCell.innerHTML = pendingFashionLabel.aboutStatement.substring(0, 100);
 
-    let sustainable = row.insertCell(6);
+    let sustainable = row.insertCell(cellIndex++);
     sustainable.innerHTML = pendingFashionLabel.sustainable ? pendingFashionLabel.sustainable : "false"
 
-    let tags = row.insertCell(7);
+    let tags = row.insertCell(cellIndex++);
     let tagsFromDB =  pendingFashionLabel.tags ? pendingFashionLabel.tags : null
     if (tagsFromDB) {
       tags.innerHTML = pendingFashionLabel.tags.map(function (key) {
@@ -157,54 +164,54 @@ function addRow(pendingFashionLabel) {
       tags.innerHTML = "none";
     }
 
-    let labelImageCell = row.insertCell(8);
+    let labelImageCell = row.insertCell(cellIndex++);
     storage.ref(pendingFashionLabel.labelImgPath).getDownloadURL().then(function(url) {
       let cellContents = url ? "<a href=" + url + " target=\"_blank\"> Label Image </a>" : "Not found";
       labelImageCell.innerHTML = cellContents;
     });
 
-    let priceRangeCell = row.insertCell(9);
+    let priceRangeCell = row.insertCell(cellIndex++);
     priceRangeCell.innerHTML = pendingFashionLabel.avgPriceRange;
 
-    let lowestPriceItemCell = row.insertCell(10);
+    let lowestPriceItemCell = row.insertCell(cellIndex++);
     lowestPriceItemCell.innerHTML = "$" + pendingFashionLabel.lowestPriceItem;
 
-    let highestPriceItemCell = row.insertCell(11);
+    let highestPriceItemCell = row.insertCell(cellIndex++);
     highestPriceItemCell.innerHTML = "$" + pendingFashionLabel.highestPriceItem;
 
-    let offeringsCell = row.insertCell(12);
+    let offeringsCell = row.insertCell(cellIndex++);
     offeringsCell.innerHTML = pendingFashionLabel.offerings.map(function (key) {
       return " " + key;
     }).toString();
 
-    let igUrlCell = row.insertCell(13);
+    let igUrlCell = row.insertCell(cellIndex++);
     igUrlCell.innerHTML = "<a href="+ pendingFashionLabel.instagramUrl + " target=\"_blank\">" + pendingFashionLabel.instagramUrl+ "</a>";
 
-    let websiteUrlCell = row.insertCell(14);
+    let websiteUrlCell = row.insertCell(cellIndex++);
     websiteUrlCell.innerHTML = "<a href=" + pendingFashionLabel.websiteUrl + " target=\"_blank\">" + pendingFashionLabel.websiteUrl + "</a>";
 
-    let labelEmailCell = row.insertCell(15);
+    let labelEmailCell = row.insertCell(cellIndex++);
     labelEmailCell.innerHTML = pendingFashionLabel.labelEmail;
 
-    let telephoneCell = row.insertCell(16);
+    let telephoneCell = row.insertCell(cellIndex++);
     telephoneCell.innerHTML = pendingFashionLabel.phoneNumber;
 
-    let exampleImgPathCell = row.insertCell(17);
+    let exampleImgPathCell = row.insertCell(cellIndex++);
     storage.ref(pendingFashionLabel.exampleImgPath).getDownloadURL().then(function(url) {
       let cellContents = url ? "<a href=" + url + " target=\"_blank\"> Example Item </a>" : "Not found";
       exampleImgPathCell.innerHTML = cellContents;
     });
 
-    let exampleItemDescCell = row.insertCell(18);
+    let exampleItemDescCell = row.insertCell(cellIndex++);
     exampleItemDescCell.innerHTML = pendingFashionLabel.exampleImgDesc;
 
-    let exampleImgPriceCell = row.insertCell(19);
+    let exampleImgPriceCell = row.insertCell(cellIndex++);
     exampleImgPriceCell.innerHTML = "$" + pendingFashionLabel.exampleImagePrice;
 
-    let submittedByCell = row.insertCell(20);
+    let submittedByCell = row.insertCell(cellIndex++);
     submittedByCell.innerHTML = pendingFashionLabel.submittedBy;
 
-    let submittedByEmail = row.insertCell(21);
+    let submittedByEmail = row.insertCell(cellIndex++);
     submittedByEmail.innerHTML = "<a href=mailto:" + pendingFashionLabel.submittedByEmail + ">" + pendingFashionLabel.submittedByEmail + "</a>"
 }
 

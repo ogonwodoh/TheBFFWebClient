@@ -12,7 +12,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
    </head >
    <body>
-      <div class="parent" id="parent">
+      <div class="parent" id="parent" style="visibility: hidden">
         <div class="header">
            <a href="../index.html" class="logo">THE BLACK FASHION FINDER</a>
            <div class="header-right">
@@ -86,6 +86,7 @@
         <table id="pendingLabelsTable">
           <tr>
             <th>Quick Post</th>
+            <th>Quick Delete</th>
             <th>ID</th>
             <th>Status</th>
             <th>Label Name</th>
@@ -122,6 +123,9 @@
         firebase.auth().onAuthStateChanged(user => {
           if(!user) {
             window.location = '../login.html'; //If User is not logged in, redirect to login page
+          } else {
+            var parent = document.getElementById("parent");
+            parent.style.visibility = 'visible';
           }
         });
 
@@ -142,7 +146,7 @@
 
             // Loop through all table rows, and hide those who don't match the search query
             for (i = 0; i < tr.length; i++) {
-              td = tr[i].getElementsByTagName("td")[2];
+              td = tr[i].getElementsByTagName("td")[3];
               if (td) {
                 txtValue = td.textContent || td.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {

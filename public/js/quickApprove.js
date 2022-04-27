@@ -10,7 +10,6 @@ function checkTableCheckboxes() {
     ids.push(id);
     this.checked = false;
   });
-  console.log(getArrayToStringToString(ids))
 
   var mutation = `
     mutation {

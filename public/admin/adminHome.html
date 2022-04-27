@@ -11,8 +11,8 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
    </head>
-   <body>
-      <div class="parent">
+   <body style="background-color: #fffdf6">
+     <div class="parent" id="parent" style="visibility: hidden">
       <div class="header">
          <a href="../index.html" class="logo">THE BLACK FASHION FINDER</a>
          <div class="header-right">
@@ -26,25 +26,26 @@
             <a href="" onclick=signOut()> Sign Out </a>
          </div>
       </div>
-      <div style="margin-top:8px; margin-left:8px; margin-right:8px;">
-         <h1 style="text-align:center"> Welcome to the Black Fashion Finder Admin Console </h1>
-      </div>
+        <div style="margin-top:8px; margin-left:8px; margin-right:8px;">
+           <h1 style="text-align:center"> Welcome to the Black Fashion Finder Admin Console </h1>
+        </div>
 
-      <div style="text-align:center">
-        <a href="./pending.html" style="font-size: 20px; color: black"> View and update the pending fashion labels </a>
-      </div>
+        <div style="text-align:center">
+          <a href="./pending.html" style="font-size: 20px; color: black"> View and update the pending fashion labels </a>
+        </div>
 
-      <div style="text-align:center; padding-top: 20px;">
-        <a href="./addFeedPost.html" style="font-size: 20px; color: black"> Add a feed post </a>
-      </div>
+        <div style="text-align:center; padding-top: 20px;">
+          <a href="./addFeedPost.html" style="font-size: 20px; color: black"> Add a feed post </a>
+        </div>
 
-      <div style="text-align:center; padding-top: 20px;">
-        <a href="./fashionLabels.html" style="font-size: 20px; color: black"> See all fashion labels </a>
-      </div>
+        <div style="text-align:center; padding-top: 20px;">
+          <a href="./fashionLabels.html" style="font-size: 20px; color: black"> See all fashion labels </a>
+        </div>
 
-      <div style="text-align:center; padding-top: 20px;">
-        <a href="./addBlogPost.html" style="font-size: 20px; color: black"> Add a blog post </a>
-      </div>
+        <div style="text-align:center; padding-top: 20px;">
+          <a href="./addBlogPost.html" style="font-size: 20px; color: black"> Add a blog post </a>
+        </div>
+    </div>
 
       <script src="/__/firebase/7.16.0/firebase-app.js"></script>
       <script src="/__/firebase/7.16.0/firebase-auth.js"></script>
@@ -54,6 +55,9 @@
         firebase.auth().onAuthStateChanged(user => {
           if(!user) {
             window.location = '../login.html'; //If User is not logged in, redirect to login page
+          } else {
+            var parent = document.getElementById("parent");
+            parent.style.visibility = 'visible';
           }
         });
 
