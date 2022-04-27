@@ -80,13 +80,13 @@
         <div class="form-group">
            <label class="col-md-4 control-label" for="quickApproveBtn"></label>
            <div class="col-md-4">
-              <button id="quickApproveBtn" name="quickApproveBtn" class="btn btn-primary" type="submit">Post</button>
+              <button id="quickApproveBtn" name="quickApproveBtn" class="btn btn-primary" type="submit">Submit Quick Updates</button>
            </div>
         </div>
         <table id="pendingLabelsTable">
           <tr>
             <th>Quick Post</th>
-            <th>Quick Delete</th>
+            <th>Quick Reject</th>
             <th>ID</th>
             <th>Status</th>
             <th>Label Name</th>
@@ -117,7 +117,7 @@
       <!-- Initialize Firebase -->
       <script src="/__/firebase/init.js"></script>
       <script type="module" src="../js/pendingLabels.js"></script>
-      <script type="module" src="../js/quickApprove.js"></script>
+      <script type="module" src="../js/quickAction.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script>
         firebase.auth().onAuthStateChanged(user => {

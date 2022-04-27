@@ -4,18 +4,35 @@ const button = document.getElementById("quickApproveBtn");
 const url = "https://us-central1-theblackfashionfinderv1.cloudfunctions.net/graphql";
 
 function checkTableCheckboxes() {
-  let ids = []
-  $('#pendingLabelsTable input[type=checkbox]:checked').each(function() {
+  let approvedIds = new Set()
+  $('#pendingLabelsTable input:checkbox[name=quick_approve]:checked').each(function() {
     let id = this.value;
-    ids.push(id);
+    approvedIds.add(id);
     this.checked = false;
+  });
+
+  let rejectedIds = new Set()
+  $('#pendingLabelsTable input:checkbox[name=quick_reject]:checked').each(function() {
+    let id = this.value;
+    this.checked = false;
+    if(approvedIds.has(id)) {
+      return alert(`Error: You are trying to approve and delete label with id ${id} which is undefined. Please fix the error.`)
+    }
+    rejectedIds.add(id);
   });
 
   var mutation = `
     mutation {
-      newPublishes : publishPendingFashionLabels(input: {ids: ${getArrayToStringToString(ids)}}) {
+      newPublishes : publishPendingFashionLabels(input: {ids: ${getArrayToStringToString(Array.from(approvedIds))}}) {
         id
       }
+      rejects : updatePendingFashionLabelStatuses(input:
+        {
+          ids: ${getArrayToStringToString(Array.from(rejectedIds))},
+          newStatus: REJECTED,
+        }) {
+          id
+        }
     }
   `;
 

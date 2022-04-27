@@ -132,9 +132,9 @@ function addRow(pendingFashionLabel) {
     let hasBeenPosted = pendingFashionLabel.status.toLowerCase() === "posted";
     quickApproveCheckBox.innerHTML = hasBeenPosted ? "N/A" : `<input type="checkbox" name="quick_approve" value="${pendingFashionLabel.id}"/>`;
 
-    let quickApproveCheckBox = row.insertCell(cellIndex++);
+    let quickRejectCheckBox = row.insertCell(cellIndex++);
     let hasBeenRejected = pendingFashionLabel.status.toLowerCase() === "rejected";
-    quickApproveCheckBox.innerHTML = hasBeenRejected ? "N/A" : `<input type="checkbox" name="quick_reject" value="${pendingFashionLabel.id}"/>`;
+    quickRejectCheckBox.innerHTML = hasBeenRejected ? "N/A" : `<input type="checkbox" name="quick_reject" value="${pendingFashionLabel.id}"/>`;
 
     let idCell = row.insertCell(cellIndex++);
     idCell.innerHTML = pendingFashionLabel.id;
