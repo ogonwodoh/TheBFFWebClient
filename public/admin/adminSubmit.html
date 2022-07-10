@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html  >
    <head>
-      <title>The Black Fashion Finder | Submit a label</title>
-      <link rel="icon" href="assets/logo.png">
+      <title>The Black Fashion Finder | Admin Add</title>
+      <link rel="icon" href="../assets/logo.png">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
       <meta http-equiv="Pragma" content="no-cache" />
       <meta http-equiv="Expires" content="0" />
 
-      <link rel="stylesheet" href="./css/submitForm.css">
+      <link rel="stylesheet" href="../css/submitForm.css">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    </head>
    <body>
-     <div class="parent">
-      <div class="header">
-         <a href="./index.html" class="logo">THE BLACK FASHION FINDER</a>
-         <div class="header-right">
-            <a href="./index.html">Home</a>
-            <a class="active" href="./submit.html">Submit a Fashion Label</a>
-            <a href="./about.html"> About </a>
-            <a href="./contact.html">Contact</a>
-            <a href="./legal.html">Legal</a>
-         </div>
-      </div>
+     <div id="parent" class="parent" style="visibility: hidden">
+       <div class="header">
+          <a href="../index.html" class="logo">THE BLACK FASHION FINDER</a>
+          <div class="header-right">
+             <a href="../index.html">Home</a>
+             <a href="../submit.html">Submit a Fashion Label</a>
+             <a href="adminHome.html"> Admin Home </a>
+             <a href="pending.html">Pending Labels </a>
+             <a href="addFeedPost.html"> Add Feed Post </a>
+             <a class="active" href="adminSubmit.html"> Admin Fashion Label Submit </a>
+             <a href="fashionLabels.html"> Fashion Labels </a>
+             <a href="addBlogPost.html"> Add Blog Post </a>
+             <a href="" onclick=signOut()> Sign Out </a>
+          </div>
+       </div>
       <div class="form">
-         <h1 style="text-align:center">Submit a Fashion Label</h1>
+         <h1 style="text-align:center"> Admin Fashion Label Submit </h1>
          <form class="form-horizontal submit-business-form" name="submitBusinessForm">
             <fieldset>
                <!-- Form Name -->
-               <legend align="center">Please enter the information as correctly as possible since this will be used directly for the app listing.</legend>
-               <p style="text-align: center"><b>Missing or inaccurate information may result in your submission being rejected.</b></p>
-               <p style="text-align:center"> All fields marked with * are required.</p>
+               <p style="text-align:center"> Some fields are pre-filled for admins. All fields marked with * are required.</p>
                <!-- Text input-->
                <div class="form-group">
                   <label class="col-md-4 control-label" for="submitter_first_name">Your First Name *</label>
                   <div class="col-md-4">
-                     <input id="submitter_first_name" name="submitter_first_name" type="text" placeholder="" class="form-control input-md" required>
+                     <input id="submitter_first_name" name="submitter_first_name" type="text" placeholder="" class="form-control input-md" value="Ogo" readonly>
                   </div>
                </div>
                <!-- Text input-->
                <div class="form-group">
                   <label class="col-md-4 control-label" for="submitter_last_name">Your Last Name *</label>
                   <div class="col-md-4">
-                     <input id="submitter_last_name" name="submitter_last_name" type="text" class="form-control input-md" required>
+                     <input id="submitter_last_name" name="submitter_last_name" type="text" class="form-control input-md" value="Nwodoh" readonly>
                   </div>
                </div>
                <div class="form-group">
                   <label class="col-md-4 control-label" for="submitter_email">Your email: *</label>
                   <div class="col-md-4">
-                     <input type="email" id="submitter_email" name="submitter_email" class="form-control input-md"  required>
+                     <input type="email" id="submitter_email" name="submitter_email" class="form-control input-md"  value="ogogurl@gmail.com" readonly>
                   </div>
                </div>
                <hr>
@@ -81,13 +83,13 @@
                   <div class="col-md-4">
                      <div class="radio">
                         <label for="black_owned-0">
-                        <input type="radio" name="black_owned" id="black_owned-0" value="True">
+                        <input type="radio" name="black_owned" id="black_owned-0" value="True" checked="checked">
                         Yes
                         </label>
                      </div>
                      <div class="radio">
                         <label for="black_owned-1">
-                        <input type="radio" name="black_owned" id="black_owned-1" value="False" checked="checked">
+                        <input type="radio" name="black_owned" id="black_owned-1" value="False" disabled>
                         No
                         </label>
                      </div>
@@ -114,7 +116,7 @@
                <!-- File Button -->
                <div class="form-group">
                   <label class="col-md-4 control-label" for="label_picture">Please upload a 1:1 aspect ratio picture that will be used to represent the brand on the Black Fashion Finder app.
-                   <br/><br/><b>Please do not submit a brand logo.</b> <br/>Accepted file types are .png,.jpeg, and .gif. *</label>
+                 <br/>Accepted file types are .png,.jpeg, and .gif. *</label>
                   <div class="col-md-4">
                      <input id="label_picture" name="label_picture" class="input-file" type="file" accept="image/png, image/jpeg, image/gif"  onchange="document.getElementById('label_picture_preview').src = window.URL.createObjectURL(this.files[0])" required>
                   </div>
@@ -295,11 +297,20 @@
       <script src="/__/firebase/7.16.0/firebase-auth.js"></script>
       <!-- Initialize Firebase -->
       <script src="/__/firebase/init.js"></script>
-      <script type="module" src="./js/submitForm.js"></script>
+      <script type="module" src="../js/submitForm.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
       <script>
+        firebase.auth().onAuthStateChanged(user => {
+          if(!user) {
+            window.location = '../login.html'; //If User is not logged in, redirect to login page
+          } else {
+            var parent = document.getElementById("parent");
+            parent.style.visibility = 'visible';
+          }
+        });
+
          var labelPicturePreview = document.getElementById('label_picture_preview');
          var highestItemPrice = document.getElementById('highest_price');
          var lowestItemPrice = document.getElementById('lowest_price');
