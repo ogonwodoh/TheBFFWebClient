@@ -21,6 +21,15 @@ function checkTableCheckboxes() {
     rejectedIds.add(id);
   });
 
+  var finalRejectedIds = new Set()
+  if (rejectedIds.size > 0) {
+     if (confirm(`You are rejecting labels with ids: ${getArrayToStringToString(Array.from(rejectedIds))}`)) {
+       finalRejectedIds = rejectedIds
+     } else {
+       return
+     }
+  }
+
   var mutation = `
     mutation {
       newPublishes : publishPendingFashionLabels(input: {ids: ${getArrayToStringToString(Array.from(approvedIds))}}) {
@@ -28,7 +37,7 @@ function checkTableCheckboxes() {
       }
       rejects : updatePendingFashionLabelStatuses(input:
         {
-          ids: ${getArrayToStringToString(Array.from(rejectedIds))},
+          ids: ${getArrayToStringToString(Array.from(finalRejectedIds))},
           newStatus: REJECTED,
         }) {
           id
