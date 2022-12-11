@@ -1,0 +1,37 @@
+<html>
+   <head >
+      <title>The Black Fashion Finder | Blog </title>
+      <link rel="icon" href="../assets/logo.png">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" href="">
+      <link rel="stylesheet" href="../../css/blog.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   </head >
+   <body>
+      <div class="parent" id="parent">
+        <div style="margin:24px;">
+           <h3 style="text-align:center"> Black Fashion Fair and The Estate
+           of Jean-Michel Basquiat Collaboration</h3>
+        </div>
+        <img src="./theophilo.jpg" width="100%"/>
+        <p style="margin-top: 4px"> by OGOCHUKWU NWODOH</p>
+        <p style="margin-top: 16px; margin-bottom: 16px">
+        Black Fashion Fair, an organization that uplifts Black people in fashion
+        through various mediums like exhibitions, publications, and clothing
+        collaborations, has come out with a new collection, "Those Who Dress Better,"
+        in partnership with The Estate of Jean-Michel Basquiat.
+        <br/><br/>
+        The collaboration features nine prominent Black designers that have
+        created pieces inspired by Basquiat's work. The pieces range from shoes
+        to jewelry to dresses. The collaboration is on display at the Jean-Michel
+        Basquiat: King Pleasure exhibition. Some items from the partnership
+        are also available for purchase.
+        <br/><br/>
+        This line is a testament to the relationship between fashion and art. It
+         speaks to Jean-Michel Basquiat's present and future relevancy.
+
+         <a href="www.blackfashionfair.org">You can learn more about the collection here.</a>
+        </p>
+      </div>
+   </body>
+</html>
