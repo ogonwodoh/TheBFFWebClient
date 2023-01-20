@@ -1,10 +1,10 @@
 
 .footer {
     overflow: hidden;
-    background-color: #faf6e9;
+    background-color:#faf6e9;
     width: 100%;
-    position: relative;
     bottom: 0;
+    position: fixed;
 }
 
 .footer-right {

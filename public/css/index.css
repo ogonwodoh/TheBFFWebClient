@@ -1,4 +1,5 @@
 @import "header.css";
+@import "footer.css";
 
 html,
 body {
@@ -26,7 +27,6 @@ html {
 
 .parent {
   background-color: #fffdf6;
-  padding-bottom: -50px;
   max-width: 100%;
   height: 100vh;
 }
