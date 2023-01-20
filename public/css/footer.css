@@ -1,0 +1,19 @@
+
+.footer {
+    overflow: hidden;
+    background-color: #faf6e9;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-right {
+    float: right;
+}
+
+.footer-right img {
+    float: right;
+    width: 20px;
+    height: 20px;
+    margin: 20px;
+}
