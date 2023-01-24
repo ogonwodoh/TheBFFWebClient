@@ -197,6 +197,7 @@ main {
   width: 41em;
   border-radius: 1em;
   min-height: 3.7em;
+  padding: 1em;
   text-align: center;
   cursor: pointer;
 }
