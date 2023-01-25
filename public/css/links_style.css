@@ -20,7 +20,7 @@
 
   /* You can change the colors of the title and description section by typing the color codes. */
   --title_color: #494949;
-  --description_color: #fff;
+  --description_color: #494949;
 
   /* You can change the colors of social media icons by changing the color code. */
   --svg_color: #fff;
@@ -103,7 +103,7 @@ body {
 }
 
 .header_text h2 {
-  color: var(--description_color);
+  color: #494949;
   font-size: 1.5em;
 }
 
